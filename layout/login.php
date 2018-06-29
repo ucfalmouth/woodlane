@@ -14,19 +14,28 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+defined('MOODLE_INTERNAL') || die();
+
 /**
- * Woodlane.
+ * A login page layout for the woodlane theme.
  *
  * @package   theme_woodlane
  * @copyright 2018 Falmouth University - Educational Technology
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = '2018052900';
-$plugin->requires = '2017111300';
-$plugin->component = 'theme_woodlane';
-$plugin->dependencies = [
-    'theme_boost' => '2016102100'
+$logourl = $this->pix_url('logo_white_2x', 'theme');
+
+$bodyattributes = $OUTPUT->body_attributes();
+
+$templatecontext = [
+    'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
+    'output' => $OUTPUT,
+    'bodyattributes' => $bodyattributes,
+    'footeritems' => theme_woodlane_get_custom_footer(),
+    'logourl' => $logourl
 ];
+
+echo $OUTPUT->render_from_template('theme_woodlane/login', $templatecontext);
+

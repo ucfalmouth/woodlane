@@ -1,1 +1,667 @@
-// Woodlane theme styling goes in here
+/***************************************************************************
+****************************************************************************
+//////////                                                        //////////
+//////////                  THEME WOODLANE                        //////////
+//////////                  FALMOUTH UNIVERSITY                   //////////
+//////////                                                        //////////
+****************************************************************************
+****************************************************************************
+
+    Sections:
+
+    1. #DEFAULTS
+    2. #LOGIN
+    3. #FOOTER
+    4. #HEADERNAVIGATION
+    5. #PAGECONTENT
+
+***************************************************************************/
+
+
+
+// #DEFAULTS ///////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+//////////                                                        //////////
+//////////             DEFAULT OVERRIDES AND COLOURS              //////////
+//////////                                                        //////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+
+@import "ls-variables";
+
+
+h1, h2, h3, h4, h5, h6, 
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-weight: 600;
+    margin: .5em 0 1em;
+}
+
+.btn-primary {
+    color: $textalt;
+    background-color: $button;
+    border-color: $button;
+    &:hover, &:active {
+        background-color: $buttonalt;
+        border-color: $buttonalt;
+    }
+}
+
+#page {
+    margin-top: 0;
+    padding-top: 70px;
+    @include media-breakpoint-up(md) {
+        padding-top: 90px;        
+    }
+    &.container-fluid {
+        padding-top: 90px;
+    }
+}
+
+#page-wrapper {
+    margin-bottom: -80px;
+}
+
+
+
+
+// #LOGIN //////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+//////////                                                        //////////
+//////////                         LOGIN                          //////////
+//////////                                                        //////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+
+
+.pagelayout-login {
+    background: #000;
+    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%); 
+    @include media-breakpoint-up(md) {
+        background: url([[pix:theme|/login/login-bg-025x]]) no-repeat center top fixed;    
+        background-size: cover;                                                            
+    }
+    
+    #page {
+
+    }
+    .btn {
+        font-size: 16px;
+    }
+    .btn-primary {
+        color: $textprimary;
+        background-color: $brandweb;
+        border-color: $brandweb;
+        &:hover {
+            background-color: darken($brandweb, 5%);
+            border-color: $brand;
+            transition: background-color .3s;
+        }
+    }
+}
+
+.ls-login-panel {
+    background: $loginpanel;
+    padding: 32px;
+    color: $textalt;
+    width: 260px;
+    margin: 32px auto;
+    @include media-breakpoint-up(md) {
+        position: absolute;
+        top: 0;
+        margin: 0;
+    }
+    @include media-breakpoint-up(lg) {
+        position: relative;
+        float: right;
+        margin: 10% 10% 0 0;
+    }
+}
+.ls-logo-title {
+    margin-bottom: 60px;
+    h2 {
+        font-size: 44px;
+        font-weight: 300;
+        margin-top: 0;
+    }
+    span + span {
+        color: $brandweb;
+    }
+}
+
+
+
+// #FOOTER /////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+//////////                                                        //////////
+//////////                      FOOTER                            //////////
+//////////                                                        //////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+
+
+.footer-content {
+    padding: 20px;
+    @include media-breakpoint-up(md) {
+        .row {
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+.footer-links {
+    li {
+        @include media-breakpoint-up(sm) {
+            display: inline-block;
+        }
+    }
+    a {
+        display: block;
+        padding: 8px 0;
+        font-size: 13px;
+        @include media-breakpoint-up(sm) {
+            display: inline;
+            margin-right: 16px;
+            padding: 0;
+        }
+    }
+}
+
+.footer-logo {
+    padding-top: 16px;
+    margin-top: 16px;
+    border-top: 1px solid #333;
+    @include media-breakpoint-up(sm) {
+        padding: 0;
+        margin: 0;
+        border: none;
+        text-align: right;
+    }
+    a {
+        display: inline-block;
+        width: 160px;
+    }
+    img {
+        width: 100%;
+    }
+}
+
+#page-footer {
+
+    min-height: 80px;
+    background: $footer;
+    color: $textalt; 
+    font-size: 14px;
+
+    a {
+    text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+
+
+
+
+
+// #HEADERNAVIGATION ///////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+//////////                                                        //////////
+//////////                  HEADER / NAVIGATION                   //////////
+//////////                                                        //////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+
+
+#nav-drawer {
+    background-color: $darkgrey;
+    padding: 0;
+    top: 70px;
+    height: calc(100% - 70px);
+    @include media-breakpoint-down(sm) {
+        top: 50px;
+        height: calc(100% - 50px);
+    }
+
+    nav {
+        margin-top: 0 !important;
+    }
+}
+.list-group {
+
+    border-bottom: 1px solid $darker;
+
+    .list-group-item {
+        border: none;
+        border-radius: 0;
+        background: $darkgrey;
+        color: $lightest;
+
+        .media-left {
+            padding-right: 0;
+        }
+    }
+
+    .fa-chevron-right {
+        color: $brandweb;
+    }
+
+    a {
+        &:hover {
+            color: $brandweb;
+            transition: color 0.2s;
+        }
+    }
+}
+
+
+header.navbar {
+    background-color: $brandweb;
+    border: none;
+    min-height: 70px;
+
+    [data-region="drawer-toggle"] .btn {
+        border: none;
+        background: transparent;
+    }
+
+    .navbar-brand {
+        font-size: 32px;
+        padding: 0;
+        background: none;
+        color: $dark;
+        &:hover {
+            color: $dark;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        min-height: 50px;
+        .navbar-brand {
+            font-size: 24px;
+        }    
+    }
+
+}
+
+
+
+
+.list-group .list-group-item {
+    padding: 18px 20px;
+    background: $darkgrey;
+    font-size: 16px;
+
+    &[data-isactive="1"] {
+        color: $brandweb;
+    }
+}
+
+.list-group .is-section {
+    background: $darkgrey;
+    padding: 7px 10px;
+}
+
+.list-group .is-section:last-of-type {
+    padding-bottom: 20px;
+}
+
+.list-group .not-section,
+.list-group .list-group-item[data-key="coursehome"] {
+    background: #3b3b3b;
+}
+
+.list-group,
+.list-group .list-group-item[data-parent-key] {
+    background: $darker;
+}
+
+.list-group .list-group-item {
+    margin: 0;
+}
+
+.list-group .list-group-item.not-section[data-parent-key] {
+    border-bottom: 1px solid $darkgrey;
+}
+
+.list-group .is-section {
+    margin-top: 10px;
+}
+
+.list-group .is-section + .is-section {
+    margin-top: 0px;
+}
+
+header .site-name {
+    display: none;
+    @include media-breakpoint-up(sm) {
+        display: block;
+    }
+}
+header .site-name-abbr {
+    display: block;
+    @include media-breakpoint-up(sm) {
+        display: none;
+    }
+}
+
+header {
+    .usermenu {
+        .usertext,
+        .dropdown-toggle::after {
+            display: none;
+        }
+    }
+    &.navbar {
+        display: flex;
+        align-items: center;
+    }
+    .navbar-nav {
+        flex: 1;
+    }
+}
+
+header .navbar-nav {
+    padding-left: 80px;
+    transition: padding-left 0.5s ease;
+    @media screen and (max-width: 767px) {
+        padding-left: 50px;
+    }
+}
+
+.drawer-toggle {
+    position: absolute;
+    background: $darker;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 70px;
+    line-height: 70px;
+    padding-left: 12px;
+    transition: width .5s ease;
+    .btn {
+        color: $lightest;
+    }
+
+    @include media-breakpoint-down(sm) {
+        line-height: 50px;
+        width: 50px;
+        padding-left: 2px;
+    }
+
+}
+
+@include media-breakpoint-up(md) {
+    body.drawer-open-left {
+        header .navbar-nav {
+            padding-left: 300px;
+            transition: padding-left 0.5s ease;
+        }
+        .drawer-toggle {
+            width: 285px;
+            transition: width .5s ease;
+        }
+    }
+}
+
+.navbar-static-top {
+    .dropdown {
+        position: initial;
+    }
+    .dropdown-item .icon {
+        color: $brandweb;
+        padding-right: 10px;
+    }
+    .dropdown-menu {
+        border: none;
+        background: transparent;
+    }
+    .dropdown-menu .dropdown-item {
+        border-bottom: 1px solid $darkest;
+        padding: 16px 26px;
+        color: $lightest;
+        background: $dark;
+        z-index:2;
+        position: relative;
+    }
+    .dropdown-menu .dropdown-item:hover {
+        background: $darkgrey;
+    }
+    .dropdown .dropdown-menu {
+        top: 50px;
+        right: 10px;
+        margin: 0 !important;
+        padding: 0;
+        border: none;
+        padding-top:20px;
+        background: transparent;
+    }
+
+    .dropdown .dropdown-menu:before {
+        content: "";
+        position: absolute;
+        top: 10px;
+        right: 33px;
+        z-index:10;
+        width:20px;
+        height:20px;
+        background: $dark;
+        transform: rotate(45deg);
+        z-index: 1;
+    }
+
+}
+
+
+
+
+.user-menu-wrapper {
+    float: right;
+}
+
+.action-menu .userpicture {
+    margin: 0;
+}
+
+
+// Elevio help
+._elevio_launcher {display: none !important;}
+.usermenu {
+    float: none;
+    display: inline-block;
+}
+.ls-elevio-trigger {
+    display: inline-block;
+    .icon {
+        color: $dark;
+        width: 24px;
+        height: 24px;
+        font-size: 24px;
+
+    }
+    &:hover .icon {
+        color: $darkgrey;
+    }
+}
+
+
+
+
+
+// #PAGECONTENT ////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+//////////                                                        //////////
+//////////                      PAGE CONTENT                      //////////
+//////////                                                        //////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+
+
+.coursebox {
+    padding: 0;
+    margin: 0 0 10px;
+
+    > .info > .coursename {
+        width: 100%;
+        a {
+            padding: 20px;
+            border: 1px solid $light;
+            background: $lighter;
+            border-left: 5px solid $brandweb;
+            color: $dark;
+            font-size: 24px;
+            font-weight: 500;
+            
+            &:hover {
+                text-decoration: none;
+                background: $light;
+                border: 1px solid $grey;
+                border-left: 5px solid $brandweb;
+                transition: background-color 0.2s, border-color 0.2s;
+            }
+        }
+    }
+    > .info > h3.coursename {
+        margin: 0;
+    }
+
+    .moreinfo,
+    .content {
+        display: none;
+    }
+}
+
+#frontpage-course-list h2, 
+#frontpage-category-names h2, 
+#frontpage-category-combo h2 {
+    margin-bottom: 20px;
+}
+
+
+.page-context-header h1 {
+    margin: 0 0 0.5em;
+}
+
+
+.section li.activity {
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border: 1px solid $lightgrey;
+    border-left: 5px solid $brandweb;
+    max-width: 768px;
+}
+
+.course-content ul.section {
+    margin: 0;
+    padding: 0;
+}
+
+.section .side {
+    margin: 0;
+}
+.editing .section .side {
+    margin-top: 8px;
+}
+
+.course-content ul.topics li.section .summary, 
+.course-content ul.weeks li.section .summary, 
+.course-content ul.topics li.section .content > .availabilityinfo, 
+.course-content ul.weeks li.section .content > .availabilityinfo {
+    margin-left: 0;
+    margin-bottom: 20px;
+}
+
+.path-course-view .completionprogress {
+    display: none;
+}
+
+.course-content ul.topics {
+    background: $lightest;
+    border: 1px solid $light;
+}
+
+.course-content ul.topics li.section {
+    padding: 0;
+    margin: 0;
+
+    .left, .right {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.editing .course-content ul.topics li.section {
+    .left, .right {
+        padding: 0 16px;
+    }
+}
+
+.sectionname {
+    margin:0;
+    a {
+        display: block;
+        padding: 20px;
+        color: $dark;
+        background: $lighter;
+        transition: background-color .8s;
+        text-decoration: none;
+        position: relative;
+        
+        &:hover {
+            color: $brandweb;
+            text-decoration: none;
+        }
+        
+        &:after {
+            content: $fa-var-caret-up;
+            position: absolute;
+            right: 40px;
+            top: 20px;
+            font-family: FontAwesome;
+            transform: rotateX(0deg);
+            transition: transform .5s;
+        }
+    }
+
+    .collapsed {
+        background: $lightest;
+        transition: background-color .8s;
+
+        &:after {
+            transform: rotateX(180deg);
+            transition: transform .5s;
+        }
+    }
+}
+.editing .sectionname {
+    a {
+        padding-top: 40px;
+        &:after {
+            top: 40px;
+        }
+    }
+}
+
+
+
+:target {
+    padding-top: 70px !important;
+    margin-top: -70px !important;
+}
+.topics .section {
+    position: relative;
+    z-index: 1;
+}
+.topics .section:target {
+    position: relative;
+    z-index: 0;
+}
+.collapse-content {
+    padding: 32px 20px;
+}
+#region-main .card {
+    min-height: auto;
+}

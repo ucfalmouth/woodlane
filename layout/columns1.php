@@ -15,18 +15,27 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Woodlane.
+ * A one column layout for the boost theme.
  *
- * @package   theme_woodlane
- * @copyright 2018 Falmouth University - Educational Technology
+ * @package   theme_boost
+ * @copyright 2016 Damyon Wiese
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = '2018052900';
-$plugin->requires = '2017111300';
-$plugin->component = 'theme_woodlane';
-$plugin->dependencies = [
-    'theme_boost' => '2016102100'
+$footeritems = array('&copy; ' . date('Y') . ' Falmouth University','<a href="">Copyright compliance</a>','<a href="">Educational Technology</a>','<a href="">Release notes</a>','<a href="">Portal</a>');
+$logourl = $this->pix_url('logo_white_2x', 'theme');
+
+$bodyattributes = $OUTPUT->body_attributes([]);
+
+$templatecontext = [
+    'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
+    'output' => $OUTPUT,
+    'bodyattributes' => $bodyattributes,
+    'footeritems' => $footeritems,
+    'logourl' => $logourl
 ];
+
+echo $OUTPUT->render_from_template('theme_woodlane/columns1', $templatecontext);
+
