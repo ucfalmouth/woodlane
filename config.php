@@ -14,6 +14,9 @@ $THEME->yuicssmodules = array();
 $THEME->requiredblocks = '';   
 $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
 
+// Prevent JS caching
+$CFG->cachejs = false;
+
 $THEME->layouts = [
     // Most backwards compatible layout without the blocks - this is the layout used by default.
     'base' => array(

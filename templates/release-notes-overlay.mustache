@@ -1,0 +1,39 @@
+<script type="text/template" id="release-template">
+    <li class="release <%if (releaseDate.future) {%>future<%}%>">
+        <div class="release-content">
+            <div class="heading">
+                <h2 class="title"><span class="version"><abbr title="Version <%= version %>">v<%= version %></abbr></span> <%= title %></h2>
+            </div>
+            <div class="description">
+                <p><%= description %></p>
+            </div>
+            <div class="further-info">
+                <%if (!releaseDate.future) {%>
+                <p><i class="icon fa fa-fw fa-check"></i> Version <%= version %> successfully deployed.</p>
+                <%}%>
+            </div>
+            <div class="date">
+                <div class="date-content">
+                    <h3 class="sr-only">Release date</h3>
+                    <div class="month"><%= releaseDate.month %></div>
+                    <div class="day"><%= releaseDate.day %></div>
+                    <div class="year"><%= releaseDate.year %></div>
+                </div>
+            </div>
+        </div>
+    </li>
+</script>
+
+<div class="overlay">
+    <div class="overlay-inner">
+        <h2 class="h1 release-title">Release Notes</h2>
+        <div class="releases-wrap">
+            <div class="loader">Loading...</div>
+            <div class="fallback hide">
+                <p class="alert alert-warning">There was a problem loading the content.</p>
+                <p><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTyxlPQ1UGeI__wbqG0XUHo1c3SxOxLbqcPt-j_p1CHCVB0OdJ0DqLfxuPRPu343YHfuLEr-GrNzNno/pubhtml" class="release-notes"><i class="icon fa fa-fw fa-chevron-right"></i>View release notes</a></p>
+            </div>
+        </div>
+        <a href="#" class="overlay-close"><i class="icon fa fa-fw fa-times"></i> <span class="sr-only">Close</span></a>
+    </div>
+</div>

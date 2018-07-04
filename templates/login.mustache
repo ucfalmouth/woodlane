@@ -59,8 +59,13 @@
 {{> theme_woodlane/footer }}
 
 {{{ output.standard_end_of_body_html }}}
+{{> theme_woodlane/release-notes-overlay }}
 </body>
 </html>
 {{#js}}
 require(['theme_boost/loader']);
+require(['theme_woodlane/release-notes'], function(releases){
+    var template = $('#release-template').html()
+    releases.init(template);
+});
 {{/js}}

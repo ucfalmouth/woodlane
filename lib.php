@@ -62,7 +62,7 @@ function theme_woodlane_get_custom_footer() {
         '<a href="http://www.falmouth.ac.uk/" class="nav-link falu">&copy; ' . date('Y') . ' Falmouth University</a>',
         '<a href="https://falmouthac.sharepoint.com/sa/info/Shared%20Documents/Moodle%20Copyright%20&%20Data%20Protection%20Statement.pdf?csf=1" class="nav-link copyright">Copyright compliance</a>',
         '<a href="http://et.falmouth.ac.uk" class="nav-link edtech">Educational Technology</a>',
-        '<a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTyxlPQ1UGeI__wbqG0XUHo1c3SxOxLbqcPt-j_p1CHCVB0OdJ0DqLfxuPRPu343YHfuLEr-GrNzNno/pubhtml" data-url="https://spreadsheets.google.com/feeds/list/1iYMDWkX6jA38sxq6IAzkqIJkcxnzJbMSFSEB038lkp8/od6/public/values?alt=json" class="nav-link release-notes">Release notes</a>',
+        '<a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTyxlPQ1UGeI__wbqG0XUHo1c3SxOxLbqcPt-j_p1CHCVB0OdJ0DqLfxuPRPu343YHfuLEr-GrNzNno/pubhtml" data-url="https://spreadsheets.google.com/feeds/list/1iYMDWkX6jA38sxq6IAzkqIJkcxnzJbMSFSEB038lkp8/od6/public/values?alt=json" class="nav-link release-notes-link">Release notes</a>',
         '<a class="nav-link portal" href="http://portal.falmouth.ac.uk">Portal</a>'
     );
     return $footeritems;
