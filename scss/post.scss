@@ -213,46 +213,7 @@ h1, h2, h3, h4, h5, h6,
 ////////////////////////////////////////////////////////////////////////////
 
 
-#nav-drawer {
-    background-color: $darkgrey;
-    padding: 0;
-    top: 70px;
-    height: calc(100% - 70px);
-    @include media-breakpoint-down(sm) {
-        top: 50px;
-        height: calc(100% - 50px);
-    }
-
-    nav {
-        margin-top: 0 !important;
-    }
-}
-.list-group {
-
-    border-bottom: 1px solid $darker;
-
-    .list-group-item {
-        border: none;
-        border-radius: 0;
-        background: $darkgrey;
-        color: $lightest;
-
-        .media-left {
-            padding-right: 0;
-        }
-    }
-
-    .fa-chevron-right {
-        color: $brandweb;
-    }
-
-    a {
-        &:hover {
-            color: $brandweb;
-            transition: color 0.2s;
-        }
-    }
-}
+// header
 
 
 header.navbar {
@@ -284,53 +245,130 @@ header.navbar {
 
 }
 
+// end header
 
+// side nav
 
+#nav-drawer {
+    background-color: $darkgrey;
+    padding: 0;
+    top: 70px;
+    height: calc(100% - 70px);
+    @include media-breakpoint-down(sm) {
+        top: 50px;
+        height: calc(100% - 50px);
+    }
 
-.list-group .list-group-item {
-    padding: 18px 20px;
-    background: $darkgrey;
-    font-size: 16px;
+    nav {
+        margin-top: 0 !important;
+    }
+}
+.list-group {
 
-    &[data-isactive="1"] {
+    background: $darker;
+    overflow: hidden;   
+
+    .list-group-item {
+        padding: 14px 20px;
+        background: $darkgrey;
+        font-size: 16px;
+        color: $lightest;
+        border: none;
+        border-radius: 0;
+        margin-bottom: 0;
+
+        &[data-isactive="1"] {
+            color: $brandweb;
+        }
+
+        .media-left {
+            padding-right: 0;
+        }
+        /* all nav items */
+        &[data-key] {
+            background: $darkgrey;
+            border-bottom: 1px solid $darkest;
+        }
+        /* nested items only */
+        &[data-parent-key] {
+            background: $darker;
+        }
+        /* make my courses look like a top level item */
+        &[data-key="mycourses"] {
+            background: $darkgrey;
+            border-bottom: 1px solid $darkest;
+        }
+        &.is-section {
+            padding: 8px 14px;
+            border-bottom: none;
+            margin-top: 12px;
+        }
+        &.is-section + .is-section {
+            margin-top: 0px;
+        }
+        &.is-section:last-child {
+            margin-bottom: 20px;
+        }
+
+        &[data-indent="1"],
+        &[data-key="grades"],
+        &[data-key="participants"] {
+            padding-left: 44px;
+
+            &:before {
+                content:'\f054';
+                position: absolute;
+                left: 24px;
+                font-family: 'FontAwesome';
+                color: $brandweb;
+            }
+        }
+        &[data-indent="1"] {
+            padding-left: 30px; 
+        }
+
+        &:hover {
+            color: $brandweb;
+            transition: color 0.2s;
+        }
+
+    }
+
+    .icon {
         color: $brandweb;
+        height: 20px;
+    }
+
+    a {
+        
     }
 }
 
-.list-group .is-section {
-    background: $darkgrey;
-    padding: 7px 10px;
+
+.jsenabled .list-group .list-group-item { // selector hellfire
+    &[data-key="mycourses"],
+    &[data-key="localboostnavigationcoursesections"],
+    &[data-key="localboostnavigationactivities"],
+    &[data-key^="localboostnavigationcustom"] {
+        &[data-isexpandable="1"]>div::after {
+            font-family: 'FontAwesome';
+            content: '\f0d8';
+            font-size: 20px;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            transform: rotateX(0);
+            transition: transform .3s;
+        }
+        &[data-collapse="1"]>div::after {
+            transform: rotateX(180deg);
+            transition: transform .3s;
+        }
+    }
 }
 
-.list-group .is-section:last-of-type {
-    padding-bottom: 20px;
-}
 
-.list-group .not-section,
-.list-group .list-group-item[data-key="coursehome"] {
-    background: #3b3b3b;
-}
 
-.list-group,
-.list-group .list-group-item[data-parent-key] {
-    background: $darker;
-}
-
-.list-group .list-group-item {
-    margin: 0;
-}
-
-.list-group .list-group-item.not-section[data-parent-key] {
-    border-bottom: 1px solid $darkgrey;
-}
-
-.list-group .is-section {
-    margin-top: 10px;
-}
-
-.list-group .is-section + .is-section {
-    margin-top: 0px;
-}
 
 header .site-name {
     display: none;
@@ -369,9 +407,34 @@ header .navbar-nav {
     }
 }
 
+.user-menu-wrapper {
+    float: right;
+}
+
+.action-menu .userpicture {
+    margin: 0;
+}
+
+.main-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .navbar-brand {
+        float: none;
+        flex: 0 1 auto;
+        line-height: 1;
+    }
+    .user-menu-wrapper {
+        width: 120px;
+        text-align: right;
+        flex: 1 0 auto;
+    }
+}
+
 .drawer-toggle {
     position: absolute;
-    background: $darker;
+    background: $darkest;
     top: 0;
     left: 0;
     height: 100%;
@@ -455,14 +518,12 @@ header .navbar-nav {
 
 
 
-.user-menu-wrapper {
-    float: right;
+.dropdown-toggle {
+    color: $darker;
+    &:hover {
+        color: $brandweb; 
+    }
 }
-
-.action-menu .userpicture {
-    margin: 0;
-}
-
 
 // Elevio help
 ._elevio_launcher {display: none !important;}
@@ -659,7 +720,7 @@ header .navbar-nav {
 .collapse-content {
     padding: 32px 20px;
 }
-#region-main .card {
+.pagelayout-frontpage #region-main > .card {
     min-height: auto;
 }
 
