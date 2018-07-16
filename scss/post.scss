@@ -71,10 +71,9 @@ h1, h2, h3, h4, h5, h6,
 
 
 .pagelayout-login {
-    background: #000;
-    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%); 
+    background: $dark;
     @include media-breakpoint-up(md) {
-        background: url([[pix:theme|/login/login-bg-025x]]) no-repeat center top fixed;    
+        background: $dark url([[pix:theme|/login/login-bg-025x]]) no-repeat center top fixed;    
         background-size: cover;                                                            
     }
     
@@ -94,12 +93,14 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .ls-login-panel {
-    background: $loginpanel;
+    background: none;
     padding: 32px;
-    color: $textalt;
+    color: $lightest;
     width: 260px;
     margin: 32px auto;
     @include media-breakpoint-up(md) {
+        color: $textalt;
+        background: $dark;
         position: absolute;
         top: 0;
         margin: 0;
@@ -107,7 +108,7 @@ h1, h2, h3, h4, h5, h6,
     @include media-breakpoint-up(lg) {
         position: relative;
         float: right;
-        margin: 10% 10% 0 0;
+        margin: 20px 100px 0 0;
     }
 }
 .ls-logo-title {
@@ -148,7 +149,7 @@ h1, h2, h3, h4, h5, h6,
 
 .footer-links {
     li {
-        @include media-breakpoint-up(sm) {
+        @include media-breakpoint-up(md) {
             display: inline-block;
         }
     }
@@ -158,7 +159,7 @@ h1, h2, h3, h4, h5, h6,
         font-size: 13px;
         @include media-breakpoint-up(sm) {
             display: inline;
-            margin-right: 16px;
+            margin-right: 12px;
             padding: 0;
         }
     }
@@ -277,6 +278,7 @@ header.navbar {
         padding: 0;
         background: none;
         color: $dark;
+        font-weight: 300;
         &:hover {
             color: $dark;
         }
@@ -776,6 +778,18 @@ header .navbar-nav {
     min-height: auto;
 }
 
+// Get rid of the all courses link
+.courses > .paging.paging-morelink {
+    display: none;
+}
+
+.collapse-control-wrap {
+    text-align: right;
+    padding: 5px 1px;
+    a {
+        font-size: .8rem;
+    }
+}
 
 
 // #RELEASENOTES ///////////////////////////////////////////////////////////

@@ -82,7 +82,7 @@
                     {{/hasregionmainsettingsmenu}}
                     {{{ output.course_content_header }}}
                     {{{ output.main_content }}}
-                    {{{ output.activity_navigation }}}
+
                     {{{ output.course_content_footer }}}
                     </div>
                 </section>
@@ -111,4 +111,5 @@ require(['theme_woodlane/release-notes'], function(releases){
     var template = $('#release-template').html()
     releases.init(template);
 });
+require(['theme_woodlane/elevio-help']);
 {{/js}}
