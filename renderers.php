@@ -378,10 +378,10 @@ class theme_woodlane_format_topics_renderer extends format_topics_renderer {
         }
 
         $title = get_section_name($course, $section);
-        $titleTrimmed = strtolower(str_replace(' ', '', $title));
-        $sectionname = html_writer::tag('a', $title, array('data-toggle'=>'collapse', 'href'=>'#cs-'.$titleTrimmed, 'aria-expanded'=>'true', 'aria-controls'=>'cs'.$titleTrimmed));
+        $titleTrimmed = 'cs-'.strtolower(str_replace(' ', '', $title));
+        $sectionname = html_writer::tag('a', $title, array('data-toggle'=>'collapse', 'href'=>'#'.$titleTrimmed, 'aria-expanded'=>'true', 'aria-controls'=>$titleTrimmed, 'class'=>'collapse-header'));
         $o.= $this->output->heading($sectionname, 3, 'sectionname' . $classes);
-        $o .= html_writer::start_tag('div', array('class' => 'collapse-wrapper collapse in', 'id'=>'cs-'.$titleTrimmed));
+        $o .= html_writer::start_tag('div', array('class' => 'collapse-wrapper collapse multi-collapse in', 'id'=>$titleTrimmed));
         $o .= html_writer::start_tag('div', array('class'=>'collapse-content'));
         $o .= $this->section_availability($section);
 
