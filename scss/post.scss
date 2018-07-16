@@ -48,9 +48,9 @@ h1, h2, h3, h4, h5, h6,
 
 #page.container-fluid {
     margin-top: 0;
-    padding-top: 70px;
+    padding: 50px 14px 30px 14px;
     @include media-breakpoint-up(md) {
-        padding-top: 90px;        
+        padding: 90px 28px 0 28px;
     }
 }
 
@@ -709,7 +709,7 @@ header .navbar-nav {
     margin:0;
     a {
         display: block;
-        padding: 20px 50px 20px 20px;
+        padding: 20px 50px 20px 14px;
         color: $dark;
         background: $lighter;
         transition: background-color .8s;
@@ -773,6 +773,9 @@ header .navbar-nav {
 }
 .collapse-content {
     padding: 32px 20px;
+    @include media-breakpoint-down(sm) {
+        padding: 32px 14px;
+    }
 }
 .pagelayout-frontpage #region-main > .card {
     min-height: auto;
@@ -787,7 +790,7 @@ header .navbar-nav {
     text-align: right;
     padding: 5px 1px;
     a {
-        font-size: .8rem;
+        font-size: 13px;
     }
 }
 
