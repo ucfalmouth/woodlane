@@ -178,9 +178,55 @@ h1, h2, h3, h4, h5, h6,
         display: inline-block;
         width: 160px;
     }
-    img {
+    svg {
         width: 100%;
     }
+    .logo-shape {
+        fill: $lightest;
+    }
+    svg:hover .logo-shape {
+        animation: flash .5s ease;
+    }
+    
+    .logo-type--falmouth, 
+    .logo-type--university {
+        .logo-shape:nth-child(1) {
+            animation-delay: .05s;
+        }
+        .logo-shape:nth-child(2) {
+          animation-delay: .1s;
+        }
+        .logo-shape:nth-child(3) {
+          animation-delay: .15s;
+        }
+        .logo-shape:nth-child(4) {
+          animation-delay: .2s;
+        }
+        .logo-shape:nth-child(5) {
+          animation-delay: .25s;
+        }
+        .logo-shape:nth-child(6) {
+          animation-delay: .3s;
+        }
+        .logo-shape:nth-child(7) {
+          animation-delay: .35s;
+        }
+        .logo-shape:nth-child(8) {
+          animation-delay: .4s;
+        }
+        .logo-shape:nth-child(9) {
+          animation-delay: .45s;
+        }
+        .logo-shape:nth-child(10) {
+          animation-delay: .5s;
+        }
+      }
+}
+
+@keyframes flash {
+    0% { fill: $lightest; }
+    50% { fill: $brandweb; }
+    100% { fill: $lightest; }
 }
 
 #page-footer {
