@@ -607,10 +607,13 @@ header .navbar-nav {
 ////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
 
-
-.coursebox {
+.courses .coursebox {
     padding: 0;
     margin: 0 0 10px;
+    &.even,
+    &.even:hover {
+        background: none;
+    }
 
     > .info > .coursename {
         width: 100%;
@@ -629,6 +632,10 @@ header .navbar-nav {
                 border: 1px solid $grey;
                 border-left: 5px solid $brandweb;
                 transition: background-color 0.2s, border-color 0.2s;
+            }
+
+            &.dimmed {
+                border-left-color: $grey;
             }
         }
     }
@@ -788,12 +795,28 @@ header .navbar-nav {
     display: none;
 }
 
+.course-content .current::before {
+    border: 5px solid $accent;
+    left: -5px;
+}
+
 .collapse-control-wrap {
     text-align: right;
     padding: 5px 1px;
     a {
         font-size: 13px;
     }
+}
+
+.section .activity video {
+    max-width: 100%;
+}
+.section .activity.modtype_label.label {
+    padding: 20px;
+    border-radius: 0;
+}
+.section .label .mod-indent-outer {
+    padding-left: 0;
 }
 
 
