@@ -567,12 +567,22 @@ class theme_woodlane_format_topics_renderer extends format_topics_renderer {
             $classes = '';
         }
 
-        $title = get_section_name($course, $section);
-        $titleTrimmed = 'cs-'.strtolower(str_replace(' ', '', $title));
-        $sectionname = html_writer::tag('a', $title, array('data-toggle'=>'collapse', 'href'=>'#'.$titleTrimmed, 'aria-expanded'=>'true', 'aria-controls'=>$titleTrimmed, 'class'=>'collapse-header'));
-        $o.= $this->output->heading($sectionname, 3, 'sectionname' . $classes);
-        $o .= html_writer::start_tag('div', array('class' => 'collapse-wrapper collapse multi-collapse in', 'id'=>$titleTrimmed));
-        $o .= html_writer::start_tag('div', array('class'=>'collapse-content'));
+        if (!$PAGE->user_is_editing()) {
+            //
+            $title = get_section_name($course, $section);
+            $titleTrimmed = 'cs-'.strtolower(str_replace(' ', '', $title));
+            
+            $sectionname = html_writer::tag('a', $title, array('data-toggle'=>'collapse', 'href'=>'#'.$titleTrimmed, 'aria-expanded'=>'true', 'aria-controls'=>$titleTrimmed, 'class'=>'collapse-header topic-heading'));
+            $o.= $this->output->heading($sectionname, 3, 'sectionname' . $classes);
+            $o .= html_writer::start_tag('div', array('class' => 'collapse-wrapper collapse multi-collapse in', 'id'=>$titleTrimmed));
+            $o .= html_writer::start_tag('div', array('class'=>'collapse-content'));
+        } else {
+            $sectionname = html_writer::tag('span', $this->section_title($section, $course), array('class'=>'topic-heading'));
+            $o.= $this->output->heading($sectionname, 3, 'sectionname' . $classes);
+            $o .= html_writer::start_tag('div', array('class' => 'topic-wrapper'));
+            $o .= html_writer::start_tag('div', array('class'=>'topic-content'));
+        }
+        
         $o .= $this->section_availability($section);
 
         $o .= html_writer::start_tag('div', array('class' => 'summary'));
@@ -594,8 +604,10 @@ class theme_woodlane_format_topics_renderer extends format_topics_renderer {
      * @return string HTML to output.
      */
     protected function section_footer() {
-        $o = html_writer::end_tag('div'); // end collapse-content
-        $o.= html_writer::end_tag('div'); // end collapse-wrapper
+        
+            $o = html_writer::end_tag('div'); // end collapse-content / topic-content
+            $o.= html_writer::end_tag('div'); // end collapse-wrapper / topic-wrapper
+        
         $o.= html_writer::end_tag('div'); 
         $o.= html_writer::end_tag('li');
         return $o;

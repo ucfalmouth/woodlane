@@ -4,10 +4,16 @@ define(['jquery'], function($) {
 
   return (function() {
 
-    var $topics = $('.course-content .topics');
-    var $content = $('.course-content .collapse');
-    var $controlWrap = $('<div class="collapse-control-wrap" />');
-    var $control = $('<a href="#" class="collapse-control">Collapse all</a>');
+    var $topics, $content, $controlWrap, $control;
+
+    if ($('body').is('.editing')) {
+      return;
+    }
+
+    $topics = $('.course-content .topics');
+    $content = $('.course-content .collapse');
+    $controlWrap = $('<div class="collapse-control-wrap" />');
+    $control = $('<a href="#" class="collapse-control">Collapse all</a>');
 
     $content.on('shown.bs.collapse hidden.bs.collapse', function() {
       if (!$content.is(':hidden')) {
