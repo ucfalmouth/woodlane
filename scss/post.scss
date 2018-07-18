@@ -610,6 +610,11 @@ header .navbar-nav {
 .courses .coursebox {
     padding: 0;
     margin: 0 0 10px;
+    position: relative;
+    &.collapsed {
+        padding: 0;
+    }
+    &:hover,
     &.even,
     &.even:hover {
         background: none;
@@ -617,6 +622,7 @@ header .navbar-nav {
 
     > .info > .coursename {
         width: 100%;
+        margin: 0;
         a {
             padding: 20px;
             border: 1px solid $light;
@@ -648,6 +654,21 @@ header .navbar-nav {
         display: none;
     }
 }
+.enrolmenticons {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.course_category_tree .category {
+    > .content {
+        padding: 10px;
+    }
+}
+
+
+
 
 #frontpage-course-list h2, 
 #frontpage-category-names h2, 
@@ -667,6 +688,7 @@ header .navbar-nav {
     border: 1px solid $lightgrey;
     border-left: 5px solid $brandweb;
     max-width: 768px;
+    background: $lightest;
 }
 
 .course-content ul.section {
@@ -800,7 +822,7 @@ header .navbar-nav {
 
 .course-content .current::before {
     border: 5px solid $accent;
-    left: -5px;
+    left: -10px;
 }
 
 .collapse-control-wrap {

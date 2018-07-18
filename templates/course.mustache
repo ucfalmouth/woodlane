@@ -107,6 +107,7 @@ require(['theme_boost/loader']);
 require(['theme_boost/drawer'], function(mod) {
     mod.init();
 });
+require(['theme_woodlane/dnd-topics']);
 require(['theme_woodlane/release-notes'], function(releases){
     var template = $('#release-template').html()
     releases.init(template);
