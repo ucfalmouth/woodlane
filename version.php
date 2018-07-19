@@ -24,9 +24,10 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = '2018052900';
+$plugin->version = '2018071900';
 $plugin->requires = '2017110800';
 $plugin->component = 'theme_woodlane';
 $plugin->dependencies = [
     'theme_boost' => '2017111300'
 ];
+$plugin->release = 'v1.0';
