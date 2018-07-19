@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Theme functions.
+ * Woodlane functions.
  *
  * @package    theme_woodlane
  * @copyright  2018 Falmouth University - Educational Technology

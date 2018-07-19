@@ -8,8 +8,7 @@ define(['jquery', 'theme_woodlane/window'], function($, win) {
 
     var handler = function(e) {
         e.preventDefault();
-
-        var url = $(this).attr('href');
+        var url = $(e.currentTarget).attr('href');
         var hash = url.substr(url.indexOf('#'));
 
         if (win.history.pushState) {

@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Woodlane.
+ * Woodlane Version
  *
  * @package   theme_woodlane
  * @copyright 2018 Falmouth University - Educational Technology
@@ -25,8 +25,8 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->version = '2018052900';
-$plugin->requires = '2017111300';
+$plugin->requires = '2017110800';
 $plugin->component = 'theme_woodlane';
 $plugin->dependencies = [
-    'theme_boost' => '2016102100'
+    'theme_boost' => '2017111300'
 ];
