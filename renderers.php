@@ -569,7 +569,7 @@ class theme_woodlane_format_topics_renderer extends format_topics_renderer {
         if (!$PAGE->user_is_editing()) {
             //
             $title = get_section_name($course, $section);
-            $titleTrimmed = 'cs-'.strtolower(str_replace(' ', '', $title));
+            $titleTrimmed = 'cs-'.strtolower(preg_replace('/\W+/', '', $title));
             
             $sectionname = html_writer::tag('a', $title, array('data-toggle'=>'collapse', 'href'=>'#'.$titleTrimmed, 'aria-expanded'=>'true', 'aria-controls'=>$titleTrimmed, 'class'=>'collapse-header topic-heading'));
             $o.= $this->output->heading($sectionname, 3, 'sectionname' . $classes);

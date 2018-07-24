@@ -32,7 +32,7 @@ if (isloggedin()) {
 } else {
     $navdraweropen = false;
 }
-$extraclasses = ['alex'];
+$extraclasses = [''];
 if ($navdraweropen) {
     $extraclasses[] = 'drawer-open-left';
 }

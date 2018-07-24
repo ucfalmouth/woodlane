@@ -847,6 +847,32 @@ header .navbar-nav {
 }
 
 
+.alert-icon {
+    padding: 1.2rem 1.2rem 1.2rem 60px;
+    position: relative;
+
+    &:before {
+        font-family: FontAwesome;
+        position: absolute;
+        left: 20px;
+        top: 12px;
+        font-size: 22px;
+    }
+    &.alert-danger:before {
+        content: '\f06a';
+    }
+    &.alert-info:before {
+        content: '\f05a';
+    }
+    &.alert-warning:before {
+        content: '\f071';
+    }
+    &.alert-success:before {
+        content: '\f073';
+    }
+}
+
+
 // #RELEASENOTES ///////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
 //////////                                                        //////////
