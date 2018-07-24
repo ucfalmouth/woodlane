@@ -879,6 +879,17 @@ header .navbar-nav {
     color: $lightest;
 }
 
+
+// Course settings
+
+#id_descriptionhdr,
+#id_courseformathdr,
+#id_rolerenaming {
+    display: none;
+}
+
+
+
 // #RELEASENOTES ///////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
 //////////                                                        //////////
