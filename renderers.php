@@ -240,6 +240,42 @@ class theme_woodlane_core_renderer extends \theme_boost\output\core_renderer {
         return $html;
     }
 
+    /**
+     * Returns HTML to display a "Turn editing on/off" button in a form.
+     *
+     * @param moodle_url $url The URL + params to send through when clicking the button
+     * @return string HTML the button
+     */
+    public function edit_button_custom(moodle_url $url) {
+
+        $url->param('sesskey', sesskey());
+        if ($this->page->user_is_editing()) {
+            $url->param('edit', 'off');
+            $editstring = get_string('turneditingoff');
+        } else {
+            $url->param('edit', 'on');
+            $editstring = get_string('turneditingon');
+        }
+
+        return $this->single_button($url, $editstring);
+    }
+
+    /**
+     * Renders a "Turn editing on/off" button in a form if user has edit capabilities
+     *
+     * @return string HTML the button
+     */
+    public function render_edit_button_custom() {
+
+        $content = '';
+        if($this->page->user_allowed_editing()) {
+            //$content.= html_writer::start_tag('div', array('class' => 'edit-wrap'));
+            $content.= $this->edit_button_custom($this->page->url);
+            //$content.= html_writer::end_tag('div');
+        }
+        return $content;
+    }
+
 }
 
 
