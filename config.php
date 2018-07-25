@@ -72,7 +72,7 @@ $THEME->layouts = [
         'options' => array('nonavbar' => true),
     ),
     'admin' => array(
-        'file' => 'columns2.php',
+        'file' => 'admin.php',
         'regions' => array('side-pre'),
         'defaultregion' => 'side-pre',
     ),
@@ -86,6 +86,7 @@ $THEME->layouts = [
         'file' => 'columns2.php',
         'regions' => array('side-pre'),
         'defaultregion' => 'side-pre',
+        'options' => array('nonavbar' => true, 'langmenu' => true),
     ),
     'login' => array(
         'file' => 'login.php',

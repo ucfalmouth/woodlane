@@ -32,12 +32,18 @@ if (isloggedin()) {
 } else {
     $navdraweropen = false;
 }
+
+if ($this->page->pagetype == 'user-edit') {
+    $this->page->set_pagelayout("mypublic");
+}
+
 $extraclasses = [];
 if ($navdraweropen) {
     $extraclasses[] = 'drawer-open-left';
 }
+
 $bodyattributes = $OUTPUT->body_attributes($extraclasses);
-$blockshtml = $OUTPUT->blocks('side-pre');
+$blockshtml = $OUTPUT->blocks('side-pre', 'nonavbar');
 $hasblocks = strpos($blockshtml, 'data-block=') !== false;
 $regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
 

@@ -226,6 +226,20 @@ class theme_woodlane_core_renderer extends \theme_boost\output\core_renderer {
         );
     }
 
+    /**
+     * Wrapper for header elements.
+     *
+     * @return string HTML to display the main header.
+     */
+    public function full_header_no_nav() {
+        $html = html_writer::start_tag('header', array('id' => 'page-header', 'class' => 'clearfix'));
+        $html .= $this->context_header();
+        $html .= html_writer::start_div('clearfix', array('id' => 'page-navbar'));
+        $html .= html_writer::tag('div', $this->course_header(), array('id' => 'course-header'));
+        $html .= html_writer::end_tag('header');
+        return $html;
+    }
+
 }
 
 
