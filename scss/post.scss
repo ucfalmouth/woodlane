@@ -36,6 +36,27 @@ h1, h2, h3, h4, h5, h6,
     margin: .5em 0 1em;
 }
 
+@include media-breakpoint-down(sm) {
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+    h3 {
+        font-size: 1.6rem;
+    }
+    h4 {
+        font-size: 1.4rem;
+    }
+    h5 {
+        font-size: 1.2rem;
+    }
+    h6 {
+        font-size: 1.15rem;
+    }
+}
+
 .btn-primary {
     color: $textalt;
     background-color: $button;
@@ -48,7 +69,7 @@ h1, h2, h3, h4, h5, h6,
 
 #page.container-fluid {
     margin-top: 0;
-    padding: 50px 14px 30px 14px;
+    padding: 50px 15px 30px 15px;
     @include media-breakpoint-up(md) {
         padding: 90px 28px 0 28px;
     }
@@ -845,6 +866,10 @@ header .navbar-nav {
 .course-content .current::before {
     border: 5px solid $accent;
     left: -10px;
+    @include media-breakpoint-down(sm) {
+        border-width: 10px;
+        left: -20px;
+    }
 }
 
 .collapse-control-wrap {
@@ -865,7 +890,9 @@ header .navbar-nav {
 .section .label .mod-indent-outer {
     padding-left: 0;
 }
-
+.activity .mod-indent-outer {
+    width: 100%;
+}
 
 .alert-icon {
     padding: 1.2rem 1.2rem 1.2rem 60px;
