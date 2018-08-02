@@ -12,8 +12,9 @@
     1. #DEFAULTS
     2. #LOGIN
     3. #FOOTER
-    4. #HEADERNAVIGATION
-    5. #PAGECONTENT
+    4. #HEADER
+    5. #NAVIGATION
+    6. #PAGECONTENT
 
 ***************************************************************************/
 
@@ -67,6 +68,11 @@ h1, h2, h3, h4, h5, h6,
     }
 }
 
+.btn-group>.btn {
+    border-color: #2f4f4f;
+}
+
+
 #page.container-fluid {
     margin-top: 0;
     padding: 50px 15px 30px 15px;
@@ -76,10 +82,11 @@ h1, h2, h3, h4, h5, h6,
 }
 
 #page-wrapper {
-    margin-bottom: -80px;
+    margin-bottom: 0;
+    @include media-breakpoint-up(md) {
+        margin-bottom: -80px;
+    }
 }
-
-
 
 
 // #LOGIN //////////////////////////////////////////////////////////////////
@@ -89,7 +96,6 @@ h1, h2, h3, h4, h5, h6,
 //////////                                                        //////////
 ////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
-
 
 .pagelayout-login {
     background: $dark;
@@ -143,7 +149,6 @@ h1, h2, h3, h4, h5, h6,
 }
 
 
-
 // #FOOTER /////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
 //////////                                                        //////////
@@ -151,7 +156,6 @@ h1, h2, h3, h4, h5, h6,
 //////////                                                        //////////
 ////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
-
 
 .footer-content {
     padding: 20px;
@@ -267,21 +271,13 @@ h1, h2, h3, h4, h5, h6,
 }
 
 
-
-
-
-
-// #HEADERNAVIGATION ///////////////////////////////////////////////////////
+// #HEADER /////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
 //////////                                                        //////////
-//////////                  HEADER / NAVIGATION                   //////////
+//////////                         HEADER                         //////////
 //////////                                                        //////////
 ////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
-
-
-// header
-
 
 header.navbar {
     background-color: $brandweb;
@@ -329,133 +325,6 @@ header.navbar {
         transition: background-color .3s, color .3s;
     }
 }
-
-// end header
-
-// side nav
-
-#nav-drawer {
-    background-color: $darkgrey;
-    padding: 0;
-    top: 70px;
-    height: calc(100% - 70px);
-    @include media-breakpoint-down(sm) {
-        top: 50px;
-        height: calc(100% - 50px);
-    }
-
-    nav {
-        margin-top: 0 !important;
-    }
-}
-.list-group {
-
-    background: $darker;
-    overflow: hidden;   
-
-    .list-group-item {
-        padding: 14px 20px;
-        background: $darkgrey;
-        font-size: 16px;
-        color: $lightest;
-        border: none;
-        border-radius: 0;
-        margin-top: 0;
-        margin-bottom: 0;
-
-        &[data-isactive="1"] {
-            color: $brandweb;
-        }
-
-        .media-left {
-            padding-right: 0;
-        }
-        /* all nav items */
-        &[data-key] {
-            background: $darkgrey;
-            border-bottom: 1px solid $darkest;
-        }
-        /* nested items only */
-        &[data-parent-key] {
-            background: $darker;
-        }
-        /* make my courses look like a top level item */
-        &[data-key="mycourses"],
-        &[data-key^="localboost"] {
-            background: $darkgrey;
-            border-bottom: 1px solid $darkest;
-        }
-        &.is-section {
-            padding: 8px 14px;
-            border-bottom: none;
-            margin-top: 12px;
-        }
-        &.is-section + .is-section {
-            margin-top: 0px;
-        }
-        &.is-section:last-child {
-            margin-bottom: 20px;
-        }
-
-        &[data-indent="1"],
-        &[data-key="grades"],
-        &[data-key="participants"] {
-            padding-left: 44px;
-
-            &:before {
-                content:'\f054';
-                position: absolute;
-                left: 24px;
-                font-family: 'FontAwesome';
-                color: $brandweb;
-            }
-        }
-        &[data-indent="1"] {
-            padding-left: 30px; 
-        }
-
-        &:hover {
-            color: $brandweb;
-            transition: color 0.2s;
-        }
-
-    }
-
-    .icon {
-        color: $brandweb;
-        height: 20px;
-    }
-
-    a {
-        
-    }
-}
-
-
-.jsenabled .list-group .list-group-item { // selector hellfire
-    &[data-key="mycourses"],
-    &[data-key="localboostnavigationcoursesections"],
-    &[data-key="localboostnavigationactivities"],
-    &[data-key^="localboostnavigationcustom"] {
-        &[data-isexpandable="1"]>div::after {
-            font-family: 'FontAwesome';
-            content: '\f0d8';
-            font-size: 20px;
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            transform: rotateX(0);
-            transition: transform .3s;
-        }
-        &[data-collapse="1"]>div::after {
-            transform: rotateX(180deg);
-            transition: transform .3s;
-        }
-    }
-}
-
-
-
 
 header .site-name {
     display: none;
@@ -605,9 +474,6 @@ header .navbar-nav {
 
 }
 
-
-
-
 .dropdown-toggle {
     color: $darker;
     &:hover {
@@ -635,8 +501,161 @@ header .navbar-nav {
     }
 }
 
+.impersonate {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    padding-left: 0;
+    transition: padding-left 0.5s ease;
+    > span {
+        display: block;
+        padding: 2px 0;
+        font-size: 13px;
+        font-weight: 500;
+        background: $accent;
+        text-align: center;
+        color: $lightest;
+    }
+    @include media-breakpoint-up(md) {
+        top: 70px;
+
+        body.drawer-open-left & {
+                padding-left: 285px;
+                transition: padding-left 0.5s ease;
+        }
+    }
+}
 
 
+// #NAVIGATION /////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+//////////                                                        //////////
+//////////                      NAVIGATION                        //////////
+//////////                                                        //////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+
+#nav-drawer {
+    background-color: $darkgrey;
+    padding: 0;
+    top: 70px;
+    height: calc(100% - 70px);
+    z-index: 1040;
+    @include media-breakpoint-down(sm) {
+        top: 50px;
+        height: calc(100% - 50px);
+    }
+
+    nav {
+        margin-top: 0 !important;
+    }
+}
+.list-group {
+
+    background: $darker;
+    overflow: hidden;   
+
+    .list-group-item {
+        padding: 14px 20px;
+        background: $darkgrey;
+        font-size: 16px;
+        color: $lightest;
+        border: none;
+        border-radius: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+
+        &[data-isactive="1"] {
+            color: $brandweb;
+        }
+
+        .media-left {
+            padding-right: 0;
+        }
+        /* all nav items */
+        &[data-key] {
+            background: $darkgrey;
+            border-bottom: 1px solid $darkest;
+        }
+        /* nested items only */
+        &[data-parent-key] {
+            background: $darker;
+        }
+        /* make my courses look like a top level item */
+        &[data-key="mycourses"],
+        &[data-key^="localboost"] {
+            background: $darkgrey;
+            border-bottom: 1px solid $darkest;
+        }
+        &.is-section {
+            padding: 8px 14px;
+            border-bottom: none;
+            margin-top: 12px;
+        }
+        &.is-section + .is-section {
+            margin-top: 0px;
+        }
+        &.is-section:last-child {
+            margin-bottom: 20px;
+        }
+
+        &[data-indent="1"],
+        &[data-key="grades"],
+        &[data-key="participants"] {
+            padding-left: 44px;
+
+            &:before {
+                content:'\f054';
+                position: absolute;
+                left: 24px;
+                font-family: 'FontAwesome';
+                color: $brandweb;
+            }
+        }
+        &[data-indent="1"] {
+            padding-left: 30px; 
+        }
+
+        &:hover {
+            color: $brandweb;
+            transition: color 0.2s;
+        }
+
+    }
+
+    .icon {
+        color: $brandweb;
+        height: 20px;
+    }
+
+    a {
+        
+    }
+}
+
+
+.jsenabled .list-group .list-group-item { // selector hellfire
+    &[data-key="mycourses"],
+    &[data-key="localboostnavigationcoursesections"],
+    &[data-key="localboostnavigationactivities"],
+    &[data-key^="localboostnavigationcustom"] {
+        &[data-isexpandable="1"]>div::after {
+            font-family: 'FontAwesome';
+            content: '\f0d8';
+            font-size: 20px;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            transform: rotateX(0);
+            transition: transform .3s;
+        }
+        &[data-collapse="1"]>div::after {
+            transform: rotateX(180deg);
+            transition: transform .3s;
+        }
+    }
+}
 
 
 // #PAGECONTENT ////////////////////////////////////////////////////////////
@@ -932,7 +951,11 @@ header .navbar-nav {
     display: none;
 }
 
+// Front page
 
+#page-site-index #page-content { // ids :(
+    padding-top: 18px;
+}
 
 // #RELEASENOTES ///////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////

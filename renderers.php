@@ -103,7 +103,7 @@ class theme_woodlane_core_renderer extends \theme_boost\output\core_renderer {
 
         $avatarclasses = "avatars";
         $avatarcontents = html_writer::span($opts->metadata['useravatar'], 'avatar current');
-        $usertextcontents = $opts->metadata['userfullname'];
+        $usertextcontents = html_writer::span($opts->metadata['userfullname'], 'userfullname');
 
         // Other user.
         if (!empty($opts->metadata['asotheruser'])) {
@@ -111,7 +111,7 @@ class theme_woodlane_core_renderer extends \theme_boost\output\core_renderer {
                 $opts->metadata['realuseravatar'],
                 'avatar realuser'
             );
-            $usertextcontents = $opts->metadata['realuserfullname'];
+            $usertextcontents = html_writer::span($opts->metadata['realuserfullname'], 'realuserfullname');
             $usertextcontents .= html_writer::tag(
                 'span',
                 get_string(
@@ -225,6 +225,59 @@ class theme_woodlane_core_renderer extends \theme_boost\output\core_renderer {
             $usermenuclasses
         );
     }
+
+    /**
+     * Construct a notification for impersonation (logged in as or other role), 
+     * returning HTML that can be echoed out by a layout file.
+     *
+     * @param stdClass $user A user object, usually $USER.
+     * @return string HTML fragment.
+     */
+    public function impersonate_notification($user = null) {
+        global $USER, $CFG;
+        require_once($CFG->dirroot . '/user/lib.php');
+    
+        if (is_null($user)) {
+            $user = $USER;
+        }
+
+        // Get some navigation opts.
+        $opts = user_get_user_navigation_info($user, $this->page);
+        $content = '';
+        $asotheruser = !empty($opts->metadata['asotheruser']);
+        $asotherrole = !empty($opts->metadata['asotherrole']);
+
+        if ($asotheruser || $asotherrole) {
+            if ($asotheruser) {
+                $content = html_writer::tag(
+                    'span',
+                    get_string(
+                        'loggedinas',
+                        'moodle',
+                        html_writer::span(
+                            $opts->metadata['userfullname'],
+                            'value'
+                        )
+                    ),
+                    array('class' => 'meta viewingas')
+                );            
+            }
+
+            if ($asotherrole) {
+                $role = core_text::strtolower(preg_replace('#[ ]+#', '-', trim($opts->metadata['rolename'])));
+                $content = html_writer::span(
+                    'Currently viewing as the following role: ' . $opts->metadata['rolename'],
+                    'meta role role-' . $role
+                );
+            }
+            
+            $content = html_writer::div($content, 'impersonate');
+        }
+
+        return $content;
+    }
+
+
 
     /**
      * Wrapper for header elements.
