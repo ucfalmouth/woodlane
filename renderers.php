@@ -296,45 +296,35 @@ class theme_woodlane_core_renderer extends \theme_boost\output\core_renderer {
     /**
      * Returns HTML to display a "Turn editing on/off" button in a form.
      *
-     * @param moodle_url $url The URL + params to send through when clicking the button
      * @return string HTML the button
      */
-    public function edit_button_custom(moodle_url $url) {
+    public function edit_button_custom() {
 
-        $url->param('sesskey', sesskey());
-        if ($this->page->user_is_editing()) {
-            $url->param('edit', 'off');
-            $editstring = get_string('turneditingoff');
-        } else {
-            $url->param('edit', 'on');
-            $editstring = get_string('turneditingon');
+        $course = $this->page->course;
+        $coursecontext = context_course::instance($course->id);
+
+        if ($this->page->user_allowed_editing()) {
+
+            if ($this->page->url->compare(new moodle_url('/course/view.php'), URL_MATCH_BASE)) {
+                $baseurl = clone($this->page->url);
+                $baseurl->param('sesskey', sesskey());
+            } else {
+                $baseurl = new moodle_url('/course/view.php', array('id'=>$course->id, 'return'=>$this->page->url->out_as_local_url(false), 'sesskey'=>sesskey()));
+            }
+
+            $editurl = clone($baseurl);
+            
+            if ($this->page->user_is_editing()) {
+                $editurl->param('edit', 'off');
+                $editstring = get_string('turneditingoff');
+            } else {
+                $editurl->param('edit', 'on');
+                $editstring = get_string('turneditingon');
+            }
+            return $this->single_button($editurl, $editstring);
         }
-
-        return $this->single_button($url, $editstring);
     }
-
-    /**
-     * Renders a "Turn editing on/off" button in a form if user has edit capabilities
-     *
-     * @return string HTML the button
-     */
-    public function render_edit_button_custom() {
-
-        $content = '';
-        if($this->page->user_allowed_editing()) {
-            //$content.= html_writer::start_tag('div', array('class' => 'edit-wrap'));
-            $content.= $this->edit_button_custom($this->page->url);
-            //$content.= html_writer::end_tag('div');
-        }
-        return $content;
-    }
-
 }
-
-
-
-
-
 
 
 
