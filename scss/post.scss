@@ -1006,6 +1006,51 @@ header .navbar-nav {
     margin: 0;
 }
 
+@include media-breakpoint-down(md) {
+    .editing {
+        .section {
+            li.activity {
+                background: #f0f8ff;
+                padding: 30px 0 0 0;
+                position: relative;
+            }
+            .activity {
+                .contentwithoutlink, 
+                .activityinstance {
+                    padding-right: 0;
+                }   
+                .mod-indent-outer {
+                    padding-left: 10px;
+                }
+                .actions {
+                    top: 4px;
+                    right: 0
+                }
+                &.modtype_label.label {
+                    padding: 30px 0 0 0;
+                }
+            }
+        }
+        .course-content ul.topics li.section .left, 
+        .course-content ul.topics li.section .right {
+            padding: 4px 5px 6px;
+            background: #eee;
+            margin: 0;
+        }
+        .sectionname .topic-heading {
+            padding: 40px 14px 20px;
+        }
+
+        &.path-site li.activity>div, 
+        &.path-course-view li.activity>div {
+            background: #fff;
+            position: static;
+            padding: 10px 10px 10px 0px;
+        }
+    }
+}
+
+
 // #RELEASENOTES ///////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
 //////////                                                        //////////
