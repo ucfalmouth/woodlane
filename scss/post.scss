@@ -444,7 +444,7 @@ header .navbar-nav {
         padding: 16px 26px;
         color: $lightest;
         background: $dark;
-        z-index:2;
+        z-index: 12;
         position: relative;
     }
     .dropdown-menu .dropdown-item:hover {
@@ -456,20 +456,27 @@ header .navbar-nav {
         margin: 0 !important;
         padding: 0;
         border: none;
-        padding-top:20px;
+        padding-top: 20px;
         background: transparent;
+        @include media-breakpoint-down(sm) {
+            top: 30px;
+        }
     }
 
     .dropdown .dropdown-menu:before {
         content: "";
         position: absolute;
         top: 10px;
-        right: 33px;
-        width:20px;
-        height:20px;
+        right: 26px;
+        width: 20px;
+        height: 20px;
         background: $dark;
         transform: rotate(45deg);
         z-index: 10;
+
+        @include media-breakpoint-down(sm) {
+            top: 18px;
+        }
     }
 
 }
@@ -974,6 +981,21 @@ header .navbar-nav {
     .singlebutton {
         float: right;
         margin-bottom: 4px;
+    }
+}
+
+#page {
+    .dropdown-menu {
+        width: 340px;
+        white-space: normal;
+
+        @include media-breakpoint-down(md) {
+            width: 260px;
+        }
+
+        .dropdown-item {
+            white-space: normal;
+        }
     }
 }
 
