@@ -704,7 +704,12 @@ class theme_woodlane_format_topics_renderer extends format_topics_renderer {
             $title = get_section_name($course, $section);
             $titleTrimmed = 'cs-'.strtolower(preg_replace('/\W+/', '', $title));
             
-            $sectionname = html_writer::tag('a', $title, array('data-toggle'=>'collapse', 'href'=>'#'.$titleTrimmed, 'aria-expanded'=>'true', 'aria-controls'=>$titleTrimmed, 'class'=>'collapse-header topic-heading'));
+            if (!$section->visible) {
+                $hiddentag = $this->output->pix_icon('i/show', '');
+                $sectionname = html_writer::tag('a', $title . $hiddentag, array('data-toggle'=>'collapse', 'href'=>'#'.$titleTrimmed, 'aria-expanded'=>'true', 'aria-controls'=>$titleTrimmed, 'class'=>'collapse-header topic-heading'));
+            } else {
+                $sectionname = html_writer::tag('a', $title, array('data-toggle'=>'collapse', 'href'=>'#'.$titleTrimmed, 'aria-expanded'=>'true', 'aria-controls'=>$titleTrimmed, 'class'=>'collapse-header topic-heading'));
+            }            
             $o.= $this->output->heading($sectionname, 3, 'sectionname' . $classes);
             $o .= html_writer::start_tag('div', array('class' => 'collapse-wrapper collapse multi-collapse in', 'id'=>$titleTrimmed));
             $o .= html_writer::start_tag('div', array('class'=>'collapse-content'));
