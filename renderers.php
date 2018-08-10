@@ -471,6 +471,46 @@ class theme_woodlane_core_course_renderer extends core_course_renderer {
         return $output;
     }
 
+    /**
+     * Renders html to display a course search form
+     *
+     * @param string $value default value to populate the search field
+     * @param string $format display format - 'plain' (default), 'short' or 'navbar'
+     * @return string
+     */
+    function course_search_form($value = '', $format = 'plain') {
+        static $count = 0;
+        $formid = 'coursesearch';
+        if ((++$count) > 1) {
+            $formid .= $count;
+        }
+
+        switch ($format) {
+            case 'navbar' :
+                $formid = 'coursesearchnavbar';
+                $inputid = 'navsearchbox';
+                $inputsize = 20;
+                break;
+            case 'short' :
+                $inputid = 'shortsearchbox';
+                $inputsize = 12;
+                break;
+            default :
+                $inputid = 'coursesearchbox';
+                $inputsize = 30;
+        }
+
+        $data = (object) [
+            'searchurl' => (new moodle_url('/course/search.php'))->out(false),
+            'id' => $formid,
+            'inputid' => $inputid,
+            'inputsize' => $inputsize,
+            'value' => $value
+        ];
+
+        return $this->output->render_from_template('theme_woodlane/course_search_form', $data);
+    }
+
 }
 
 
