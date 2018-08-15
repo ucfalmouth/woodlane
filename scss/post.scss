@@ -204,6 +204,7 @@ h1, h2, h3, h4, h5, h6,
     }
     svg {
         width: 100%;
+        height: 40px;
         vertical-align: middle;
     }
     .logo-shape {
@@ -212,15 +213,12 @@ h1, h2, h3, h4, h5, h6,
 }
 
 #page-footer {
-
     min-height: 80px;
     background: $footer;
     color: $textalt; 
     font-size: 14px;
-
     a {
         text-decoration: none;
-
         &:hover {
             text-decoration: underline;
         }
@@ -240,6 +238,7 @@ header.navbar {
     background-color: $brandweb;
     border: none;
     min-height: 70px;
+    height: 70px;
 
     [data-region="drawer-toggle"] .btn {
         border: none;
@@ -260,6 +259,7 @@ header.navbar {
 
     @include media-breakpoint-down(sm) {
         min-height: 50px;
+        height: 50px;
         .navbar-brand {
             font-size: 24px;
         }    
