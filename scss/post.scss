@@ -906,6 +906,20 @@ header .navbar-nav {
     width: 100%;
 }
 
+.section .activity .availabilityinfo, 
+.section .activity .contentafterlink {
+    margin-left: 0;
+}
+
+// talis plugin
+.section .activity.aspirelists .activityinstance > a,
+.aspirelists_inline_accordion {
+    display: inline-block;
+}
+.aspirelists_inline_accordion {
+  margin-left: 10px;
+}
+
 .alert-icon {
     padding: 1.2rem 1.2rem 1.2rem 60px;
     position: relative;
