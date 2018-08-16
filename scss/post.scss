@@ -990,11 +990,13 @@ header .navbar-nav {
     }
 }
 
-.section img[class*="atto_image"] {
-    width: 100%;
-    height: auto;
-    float: none;
-    margin: 0;
+@include media-breakpoint-down(sm) {
+    .section img[class*="atto_image"] {
+        width: 100%;
+        height: auto;
+        float: none;
+        margin: 0;
+    }
 }
 
 @include media-breakpoint-down(md) {
