@@ -990,7 +990,7 @@ header .navbar-nav {
     }
 }
 
-@include media-breakpoint-down(sm) {
+@include media-breakpoint-down(xs) {
     .section img[class*="atto_image"] {
         width: 100%;
         height: auto;
