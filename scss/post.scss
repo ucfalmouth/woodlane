@@ -896,9 +896,16 @@ header .navbar-nav {
     max-width: 100%;
 }
 .section .activity.modtype_label.label {
-    padding: 20px;
+    padding: 0;
+    border: none;
     border-radius: 0;
 }
+
+.activity:not(.label) + .label {
+    margin-top: 2rem;
+    margin-bottom: 0;
+  }
+
 .section .label .mod-indent-outer {
     padding-left: 0;
 }
