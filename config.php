@@ -99,7 +99,7 @@ $THEME->layouts = [
         'options' => array('nofooter' => true, 'nonavbar' => true),
     ),
     'frametop' => array(
-        'file' => 'columns1.php',
+        'file' => 'frametop.php',
         'regions' => array(),
         'options' => array('nofooter' => true, 'nocoursefooter' => true),
     ),
