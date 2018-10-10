@@ -35,8 +35,6 @@ $THEME->yuicssmodules = array();
 $THEME->requiredblocks = '';   
 $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
 
-// Prevent JS caching
-$CFG->cachejs = false;
 
 $THEME->layouts = [
 
