@@ -63,6 +63,13 @@
 </body>
 </html>
 {{#js}}
+require.config({
+    shim: {
+        underscore: {
+            exports: '_'
+        }
+    }
+});
 require(['theme_boost/loader']);
 require(['theme_woodlane/release-notes'], function(releases){
     var template = $('#release-template').html()

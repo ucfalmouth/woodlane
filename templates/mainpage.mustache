@@ -102,6 +102,14 @@
 </body>
 </html>
 {{#js}}
+require.config({
+    shim: {
+        underscore: {
+            exports: '_'
+        }
+    }
+});
+
 require(['theme_boost/loader']);
 require(['theme_boost/drawer'], function(mod) {
     mod.init();
