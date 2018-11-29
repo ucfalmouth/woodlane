@@ -1050,6 +1050,17 @@ header .navbar-nav {
     }
 }
 
+// JS related
+
+@include media-breakpoint-down(sm) {
+    .form-autocomplete-selection {
+        clear: both;
+    }
+}
+.form-autocomplete-selection + input.form-control {
+    min-width: 240px;
+}
+
 
 // #RELEASENOTES ///////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
