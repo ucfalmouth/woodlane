@@ -65,9 +65,9 @@ $THEME->layouts = [
     ),
     'frontpage' => array(
         'file' => 'mainpage.php',
-        'regions' => array('side-pre'),
+        'regions' => array('side-pre', 'home-list'),
         'defaultregion' => 'side-pre',
-        'options' => array('nonavbar' => true),
+        'options' => array('nonavbar' => true)
     ),
     'admin' => array(
         'file' => 'admin.php',

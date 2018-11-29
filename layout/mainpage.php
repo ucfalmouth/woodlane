@@ -39,6 +39,10 @@ if ($navdraweropen) {
 $bodyattributes = $OUTPUT->body_attributes($extraclasses);
 $blockshtml = $OUTPUT->blocks('side-pre');
 $hasblocks = strpos($blockshtml, 'data-block=') !== false;
+
+$hascustomcourselist = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('home-list', $OUTPUT));
+$customcourselist = $OUTPUT->blocks_for_region('home-list');
+
 $regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
 $logourl = $this->pix_url('logo_white_2x', 'theme');
 
@@ -47,6 +51,8 @@ $templatecontext = [
     'output' => $OUTPUT,
     'sidepreblocks' => $blockshtml,
     'hasblocks' => $hasblocks,
+    'hascustomcourselist' => $hascustomcourselist,
+    'customcourselist' => $customcourselist,
     'bodyattributes' => $bodyattributes,
     'navdraweropen' => $navdraweropen,
     'regionmainsettingsmenu' => $regionmainsettingsmenu,
