@@ -634,6 +634,7 @@ header .navbar-nav {
     padding: 0;
     margin: 0 0 10px;
     position: relative;
+    background: none;
     &.collapsed {
         padding: 0;
     }
@@ -710,6 +711,17 @@ header .navbar-nav {
 #frontpage-category-names h2, 
 #frontpage-category-combo h2 {
     margin-bottom: 20px;
+}
+
+.pagelayout-frontpage .sitetopic {
+        display: none;
+}
+.editing.pagelayout-frontpage .sitetopic {
+        display: block;
+}
+
+.block_filtered_course_list #frontpage-course-list {
+    padding: 1.25rem; 
 }
 
 
