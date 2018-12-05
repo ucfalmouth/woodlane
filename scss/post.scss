@@ -103,18 +103,6 @@ h1, h2, h3, h4, h5, h6,
         background: $dark url([[pix:theme|/login/login-bg-025x]]) no-repeat center top fixed;    
         background-size: cover;                                                            
     }
-    
-    .btn {
-        font-size: 16px;
-        color: $textprimary;
-        background-color: $brandweb;
-        border-color: $brandweb;
-        &:hover {
-            background-color: darken($brandweb, 5%);
-            border-color: $brand;
-            transition: background-color .3s;
-        }
-    }
 }
 
 .ls-login-panel {
@@ -135,6 +123,19 @@ h1, h2, h3, h4, h5, h6,
         float: right;
         margin: 20px 100px 0 0;
     }
+
+    .btn {
+        font-size: 16px;
+        color: $textprimary;
+        background-color: $brandweb;
+        border-color: $brandweb;
+        &:hover {
+            background-color: darken($brandweb, 5%);
+            border-color: $brand;
+            transition: background-color .3s;
+        }
+    }
+
 }
 .ls-logo-title {
     margin-bottom: 60px;
@@ -148,6 +149,20 @@ h1, h2, h3, h4, h5, h6,
     }
 }
 
+.ls-admin-block {
+    position: fixed;
+    top: 0;
+    left: 0;
+    @include media-breakpoint-down(md) {
+        display: none;
+    }
+}
+
+.ls-admin-form {
+    padding: 10px;
+    border-radius: 0 0 4px 0;
+    background: #323232;
+}
 
 // #FOOTER /////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
