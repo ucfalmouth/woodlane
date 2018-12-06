@@ -30,4 +30,4 @@ $plugin->component = 'theme_woodlane';
 $plugin->dependencies = [
     'theme_boost' => '2017111300'
 ];
-$plugin->release = 'v1.1.1';
+$plugin->release = 'v1.2';
