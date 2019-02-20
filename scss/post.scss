@@ -319,11 +319,11 @@ header {
         }
     }
     &.navbar {
-        display: flex;
-        align-items: center;
+        // display: flex;
+        // align-items: center;
     }
     .navbar-nav {
-        flex: 1;
+        // flex: 1;
     }
 }
 
@@ -344,13 +344,13 @@ header .navbar-nav {
 }
 
 .main-navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
 
     .navbar-brand {
         float: none;
-        flex: 0 1 auto;
+        // flex: 0 1 auto;
         line-height: 1;
         &:focus,
         &:hover {
@@ -360,7 +360,7 @@ header .navbar-nav {
     .user-menu-wrapper {
         width: 120px;
         text-align: right;
-        flex: 1 0 auto;
+        // flex: 1 0 auto;
     }
 }
 
