@@ -51,18 +51,22 @@
 
     {{{ output.standard_top_of_body_html }}}
 
-    <div class="card card-block">
-        <a href="{{{referer}}}" class="btn btn-primary"><i class="fa fa-chevron-left"></i> Back to Learning Space</a>
+    <div class="card">
+        <div class="card-body">
+            <a href="{{{referer}}}" class="btn btn-primary"><i class="fa fa-chevron-left"></i> Back to Learning Space</a>
+        </div>
     </div>
     <div id="page" class="container-fluid">
         <div id="page-content" class="row">
             <div id="region-main-box" class="col-xs-12">
                 <section id="region-main">
-                    <div class="card card-block">
-                    {{{ output.course_content_header }}}
-                    {{{ output.main_content }}}
-                    {{{ output.activity_navigation }}}
-                    {{{ output.course_content_footer }}}
+                    <div class="card">
+                        <div class="card-body">
+                            {{{ output.course_content_header }}}
+                            {{{ output.main_content }}}
+                            {{{ output.activity_navigation }}}
+                            {{{ output.course_content_footer }}}
+                        </div>
                     </div>
                 </section>
             </div>
