@@ -940,7 +940,7 @@ class theme_woodlane_format_topics_renderer extends format_topics_renderer {
                 $sectionname = html_writer::tag('a', $title, array('data-toggle'=>'collapse', 'href'=>'#'.$titleTrimmed, 'aria-expanded'=>'true', 'aria-controls'=>$titleTrimmed, 'class'=>'collapse-header topic-heading'));
             }            
             $o.= $this->output->heading($sectionname, 3, 'sectionname' . $classes);
-            $o .= html_writer::start_tag('div', array('class' => 'collapse-wrapper collapse multi-collapse in', 'id'=>$titleTrimmed));
+            $o .= html_writer::start_tag('div', array('class' => 'collapse-wrapper collapse multi-collapse show', 'id'=>$titleTrimmed));
             $o .= html_writer::start_tag('div', array('class'=>'collapse-content'));
         } else {
             $sectionname = html_writer::tag('span', $this->section_title($section, $course), array('class'=>'topic-heading'));
