@@ -1138,6 +1138,16 @@ header .navbar-nav {
     }
 }
 
+// Softer border for cards and other similar elements
+.card, 
+#page-enrol-users #filterform, 
+.que .history, 
+.userprofile .profile_tree section, 
+.groupinfobox, 
+.well {
+    border-color: rgba(238,238,238,1);
+}
+
 // JS related
 
 @include media-breakpoint-down(sm) {

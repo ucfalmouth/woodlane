@@ -20,7 +20,7 @@
 
 {{! Start Block Container }}
 <{{#homelist}}div{{/homelist}}{{^homelist}}aside{{/homelist}} id="{{id}}"
-     class="{{region}} {{#hidden}}hidden{{/hidden}} block block_{{type}} {{#hascontrols}}block_with_controls{{/hascontrols}} card m-b-1"
+     class="{{region}} {{#hidden}}hidden{{/hidden}} block block_{{type}} {{#hascontrols}}block_with_controls{{/hascontrols}} m-b-1"
      role="{{ariarole}}"
      data-block="{{type}}"
      {{#arialabel}}
@@ -33,7 +33,8 @@
      {{/arialabel}}>
 
     {{! Block contents }}
-    <div class="card-block">
+    <div class="card">
+        <div class="card-body">
 
         {{#hascontrols}}
             <div class="block-controls pull-xs-right header">
@@ -50,6 +51,8 @@
             {{{content}}}
             <div class="footer">{{{footer}}}</div>
             {{{annotation}}}
+        </div>
+
         </div>
 
     </div>
