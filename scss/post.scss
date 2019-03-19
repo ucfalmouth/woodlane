@@ -33,6 +33,7 @@
 
 body {
     background: #f4f4f4;
+    font-size: .875rem; // override the increase of latest update
 }
 
 h1, h2, h3, h4, h5, h6, 
@@ -690,6 +691,7 @@ header .navbar-nav {
     border: none;
     padding: 0 0 1.75rem;
     background: none;
+    overflow: inherit;
 }
 
 
