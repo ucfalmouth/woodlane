@@ -112,6 +112,10 @@ h1, h2, h3, h4, h5, h6,
         background: $dark url([[pix:theme|/login/login-bg-025x]]) no-repeat center top fixed;    
         background-size: cover;                                                            
     }
+
+    #region-main-box {
+        width: 100%;
+    }
 }
 
 .ls-login-panel {
@@ -128,8 +132,8 @@ h1, h2, h3, h4, h5, h6,
         margin: 0;
     }
     @include media-breakpoint-up(lg) {
-        position: relative;
-        float: right;
+        position: absolute;
+        right: 0;
         margin: 20px 100px 0 0;
     }
 
@@ -194,6 +198,10 @@ h1, h2, h3, h4, h5, h6,
 //         }
 //     }
 // }
+.page-footer {
+    display: flex;
+    align-items: center;
+}
 
 .footer-links {
     li {
