@@ -37,6 +37,10 @@
     margin-bottom: 24px;
 }
 
+.path-report-myfeedback table.grades tr:hover td {
+    background: #fcf0cb!important;
+}
+
 div.dt-button-collection button.dt-button:active:not(.disabled),
 div.dt-button-collection button.dt-button.active:not(.disabled), 
 div.dt-button-collection div.dt-button:active:not(.disabled), 
