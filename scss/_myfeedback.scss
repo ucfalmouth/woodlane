@@ -1,0 +1,100 @@
+.path-report-myfeedback #reportPrint {
+    @extend %button-default;
+    background-image: none;
+}
+.path-report-myfeedback .buttonswrapper {
+    overflow: hidden;
+    // float: none !important;
+    margin-bottom: 24px;
+}
+.path-report-myfeedback .dataTables_wrapper {
+    margin-top: 24px;
+    border-top: 5px solid #198f91;
+    padding: 24px 16px;
+    background: #f5f7f7;
+    overflow-y: scroll;
+}
+
+.path-report-myfeedback .ac-year-right {
+    float: none;
+    margin: 0;
+    overflow: hidden;
+    p, form {
+        float: left;
+    }
+}
+.path-report-myfeedback .nav.nav-tabs {
+    font-size: 16px;
+}
+.path-report-myfeedback .nav-tabs>li>a:focus {
+    background-color: inherit;
+    text-decoration: underline;
+}
+
+.path-report-myfeedback .heading h2 {
+    background: none;
+    color: #333;
+    margin-bottom: 24px;
+}
+
+div.dt-button-collection button.dt-button:active:not(.disabled),
+div.dt-button-collection button.dt-button.active:not(.disabled), 
+div.dt-button-collection div.dt-button:active:not(.disabled), 
+div.dt-button-collection div.dt-button.active:not(.disabled), 
+div.dt-button-collection a.dt-button:active:not(.disabled), 
+div.dt-button-collection a.dt-button.active:not(.disabled) {
+    @extend %button-default;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+
+button.dt-button, 
+div.dt-button, 
+a.dt-button {
+    @extend %button-default;
+    white-space: normal;
+    background-image: none;
+}
+
+button.dt-button.disabled, 
+div.dt-button.disabled, 
+a.dt-button.disabled {
+    
+}
+
+button.dt-button:active:not(.disabled), 
+button.dt-button.active:not(.disabled), 
+div.dt-button:active:not(.disabled), 
+div.dt-button.active:not(.disabled), 
+a.dt-button:active:not(.disabled), 
+a.dt-button.active:not(.disabled) {
+}
+
+button.dt-button:active:not(.disabled):hover:not(.disabled), 
+button.dt-button.active:not(.disabled):hover:not(.disabled), 
+div.dt-button:active:not(.disabled):hover:not(.disabled), 
+div.dt-button.active:not(.disabled):hover:not(.disabled), 
+a.dt-button:active:not(.disabled):hover:not(.disabled), 
+a.dt-button.active:not(.disabled):hover:not(.disabled) {
+    background-image: none;
+    box-shadow: none;
+}
+
+button.dt-button:hover, 
+div.dt-button:hover, 
+a.dt-button:hover {
+
+}
+
+button.dt-button:hover:not(.disabled), 
+div.dt-button:hover:not(.disabled), 
+a.dt-button:hover:not(.disabled) {
+   
+}
+
+button.dt-button:focus:not(.disabled), 
+div.dt-button:focus:not(.disabled), 
+a.dt-button:focus:not(.disabled) {
+
+}
