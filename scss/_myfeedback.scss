@@ -34,6 +34,7 @@
     background: none;
     color: #333;
     margin-bottom: 24px;
+    margin-top: 24px;
 }
 
 .path-report-myfeedback table.grades tr:hover td {
@@ -52,10 +53,14 @@
     background-color: $buttonalt;
     border-color: $buttonalt;
 }
+.path-report-myfeedback .ownreport a {
+    font-size: inherit;
+}
 .path-report-myfeedback .descriptionbox h2 {
     font-size: 1.4rem;
-    margin: 16px 0;
+    margin: 0 !important;
 }
+
 
 div.dt-button-collection button.dt-button:active:not(.disabled),
 div.dt-button-collection button.dt-button.active:not(.disabled), 
