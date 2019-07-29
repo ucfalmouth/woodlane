@@ -78,7 +78,8 @@ div.dt-button-collection a.dt-button.active:not(.disabled) {
 
 button.dt-button, 
 div.dt-button, 
-a.dt-button {
+a.dt-button,
+.path-report-myfeedback .personaltutoremail {
     @extend %button-default;
     white-space: normal;
     background-image: none;
@@ -124,4 +125,10 @@ button.dt-button:focus:not(.disabled),
 div.dt-button:focus:not(.disabled), 
 a.dt-button:focus:not(.disabled) {
 
+}
+
+@media (min-width: 768px) {
+    #tooltip2 {
+        z-index: 1041;
+    }
 }
