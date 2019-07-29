@@ -92,6 +92,7 @@ a.dt-button,
 .path-report-myfeedback .sToggle, 
 .path-report-myfeedback .aToggle {
     margin-right: 8px;
+    margin-left: 0;
 }
 .path-report-myfeedback .aToggle {
     background: #516fa0 !important;
@@ -143,4 +144,5 @@ a.dt-button.active:not(.disabled):hover:not(.disabled) {
 }
 .path-report-myfeedback .fullRec {
     overflow-y: scroll;
+    width: 100%;
 }
