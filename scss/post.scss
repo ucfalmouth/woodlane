@@ -127,14 +127,10 @@ h1, h2, h3, h4, h5, h6,
     @include media-breakpoint-up(md) {
         color: $textalt;
         background: $dark;
-        position: absolute;
-        top: 0;
-        margin: 0;
+        float: right;
     }
     @include media-breakpoint-up(lg) {
-        position: absolute;
-        right: 0;
-        margin: 20px 100px 0 0;
+        margin: 24px 184px 24px 0;
     }
 
     .btn {
