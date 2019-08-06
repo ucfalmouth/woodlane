@@ -1432,9 +1432,10 @@ header .navbar-nav {
 
 .path-mod-scheduler {
     div.commandbar {
-        text-align: right;
-        span.title {
-            float: none;
+        display: flex;
+        justify-content: flex-end;
+        .moodle-actionmenu .menubar .action-menu-trigger {
+            flex: 1 1 auto;
         }
     }
     .maildisplay {
@@ -1442,7 +1443,7 @@ header .navbar-nav {
         width: 100%;
     }
 }
-
+.path-mod-scheduler div.commandbar .moodle-actionmenu .menubar
 
 
 
