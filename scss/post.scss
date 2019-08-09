@@ -469,7 +469,8 @@ header .navbar-nav {
     }
     .dropdown .dropdown-menu {
         top: 32px;
-        left: -150px;
+        left: auto;
+        right: -10px;
         margin: 0 !important;
         padding: 0;
         border: none;
@@ -1442,10 +1443,12 @@ header .navbar-nav {
         background: #d9d9d9;
         width: 100%;
     }
+    @media (max-width: 800px) {
+        #region-main-box .card {
+            overflow-y: scroll;
+        }
+    }
 }
-.path-mod-scheduler div.commandbar .moodle-actionmenu .menubar
-
-
 
 
 .block_filtered_course_list h3 {
