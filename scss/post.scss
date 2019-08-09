@@ -1153,6 +1153,7 @@ header .navbar-nav {
 .groupinfobox, 
 .well {
     border-color: rgba(238,238,238,1);
+    overflow-x: scroll;
 }
 
 // JS related
@@ -1455,14 +1456,6 @@ header .navbar-nav {
     @extend .h3
 }
 
-.block-fcl__content {
-
-}
-
-.block-fcl__category:last-child {
-
-}
-
 .block-fcl__rubric {
     padding: 16px;
     background: $brandweb;
@@ -1501,5 +1494,20 @@ header .navbar-nav {
             background: darken(#eee, 10%);
             transition: background-color .2s;
         }
+    }
+}
+
+.path-grade-report-grader #region-main>.card {
+    overflow: scroll;
+}
+
+.path-grade-report-grader #region-main {
+    display: block;
+    overflow: scroll;
+}
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 600px;
     }
 }
