@@ -102,7 +102,7 @@ input[type="text"] {
 #page-wrapper {
     margin-bottom: 0;
     @include media-breakpoint-up(md) {
-        margin-bottom: -80px;
+
     }
 }
 
@@ -136,14 +136,10 @@ input[type="text"] {
     @include media-breakpoint-up(md) {
         color: $textalt;
         background: $dark;
-        position: absolute;
-        top: 0;
-        margin: 0;
+        float: right;
     }
     @include media-breakpoint-up(lg) {
-        position: absolute;
-        right: 0;
-        margin: 20px 100px 0 0;
+        margin: 24px 184px 24px 0;
     }
 
     .btn {
@@ -482,7 +478,8 @@ header .navbar-nav {
     }
     .dropdown .dropdown-menu {
         top: 32px;
-        left: -150px;
+        left: auto;
+        right: -10px;
         margin: 0 !important;
         padding: 0;
         border: none;
@@ -1165,6 +1162,7 @@ header .navbar-nav {
 .groupinfobox, 
 .well {
     border-color: rgba(238,238,238,1);
+    overflow-x: scroll;
 }
 
 // JS related
@@ -1445,31 +1443,26 @@ header .navbar-nav {
 
 .path-mod-scheduler {
     div.commandbar {
-        text-align: right;
-        span.title {
-            float: none;
+        display: flex;
+        justify-content: flex-end;
+        .moodle-actionmenu .menubar .action-menu-trigger {
+            flex: 1 1 auto;
         }
     }
     .maildisplay {
         background: #d9d9d9;
         width: 100%;
     }
+    @media (max-width: 800px) {
+        #region-main-box .card {
+            overflow-y: scroll;
+        }
+    }
 }
-
-
-
 
 
 .block_filtered_course_list h3 {
     @extend .h3
-}
-
-.block-fcl__content {
-
-}
-
-.block-fcl__category:last-child {
-
 }
 
 .block-fcl__rubric {
@@ -1516,3 +1509,17 @@ header .navbar-nav {
 // My Feedback Plugin Styling
 
 @import "myfeedback";
+.path-grade-report-grader #region-main>.card {
+    overflow: scroll;
+}
+
+.path-grade-report-grader #region-main {
+    display: block;
+    overflow: scroll;
+}
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 600px;
+    }
+}
