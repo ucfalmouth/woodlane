@@ -64,7 +64,7 @@ function theme_woodlane_get_custom_footer() {
         '<a href="https://falmouthac.sharepoint.com/ict/info/Shared%20Documents/Forms/AllItems.aspx?id=%2Fict%2Finfo%2FShared%20Documents%2FMoodle%20Copyright%20%26%20Data%20Protection%20Statement%2Epdf&parent=%2Fict%2Finfo%2FShared%20Documents&p=true&slrid=7e9f7d9e-50c7-6000-1297-403eb05f7bff" class="nav-link copyright">Copyright compliance</a>',
         '<a href="https://www.falmouth.ac.uk/data-privacy-learning-space-users" class="nav-link privacy">Privacy</a>',
         '<a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTyxlPQ1UGeI__wbqG0XUHo1c3SxOxLbqcPt-j_p1CHCVB0OdJ0DqLfxuPRPu343YHfuLEr-GrNzNno/pubhtml" data-url="https://spreadsheets.google.com/feeds/list/1iYMDWkX6jA38sxq6IAzkqIJkcxnzJbMSFSEB038lkp8/od6/public/values?alt=json" class="nav-link release-notes-link">Release notes</a>',
-        '<a href="http://portal.falmouth.ac.uk" class="nav-link portal">Portal</a>'
+        '<a href="https://student.falmouth.ac.uk" class="nav-link portal">Student portal</a>'
     );
     return $footeritems;
 }
