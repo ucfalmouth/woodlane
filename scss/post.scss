@@ -67,7 +67,7 @@ h1, h2, h3, h4, h5, h6,
     border-radius: 5px !important;
 }
 
-.btn-primary {
+.btn.btn-primary {
     color: $textalt;
     background-color: $button;
     border-color: $button;
@@ -822,6 +822,7 @@ header .navbar-nav {
         height: 24px;
         line-height: 19px;
         color: $accent;
+        margin-left: 8px;
     }
 }
 
