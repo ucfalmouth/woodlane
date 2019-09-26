@@ -1156,6 +1156,11 @@ header .navbar-nav {
     overflow-x: scroll;
 }
 
+// #925
+#page-header .card {
+    overflow: inherit;
+}
+
 // JS related
 
 @include media-breakpoint-down(sm) {
@@ -1511,3 +1516,10 @@ header .navbar-nav {
         max-width: 600px;
     }
 }
+
+// #574
+.editing_groupsvisible, 
+.editing_groupsnone  {
+    display: none
+}
+
