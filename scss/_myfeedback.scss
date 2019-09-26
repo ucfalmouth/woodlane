@@ -1,0 +1,148 @@
+.path-report-myfeedback #reportPrint {
+    @extend %button-default;
+    background-image: none;
+}
+.path-report-myfeedback .buttonswrapper {
+    overflow: hidden;
+    // float: none !important;
+    margin-bottom: 24px;
+    margin-top: 24px;
+}
+.path-report-myfeedback .dataTables_wrapper {
+    margin-top: 24px;
+    padding: 24px 16px;
+    background: #f5f7f7;
+    overflow-y: scroll;
+}
+.path-report-myfeedback .userprofilebox {
+    margin: 24px 0;
+}
+.path-report-myfeedback .ac-year-right {
+    margin: 0;
+    overflow: hidden;
+    p, form {
+        float: left;
+    }
+}
+.path-report-myfeedback .nav.nav-tabs {
+    font-size: 16px;
+}
+.path-report-myfeedback .nav-tabs>li>a:focus {
+    background-color: inherit;
+    text-decoration: underline;
+}
+
+.path-report-myfeedback .heading h2 {
+    background: none;
+    color: #333;
+    margin-bottom: 24px;
+    margin-top: 24px;
+}
+
+.path-report-myfeedback table.grades tr:hover td {
+    background: #fcf0cb!important;
+}
+
+.path-report-myfeedback .ownreport {
+    float: right;
+    background-color: $button;
+    border-color: $button;
+    padding: 8px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+.path-report-myfeedback .ownreport:hover {
+    background-color: $buttonalt;
+    border-color: $buttonalt;
+}
+.path-report-myfeedback .ownreport a {
+    font-size: inherit;
+}
+.path-report-myfeedback .descriptionbox h2 {
+    font-size: 1.4rem;
+    margin: 0 !important;
+}
+
+
+div.dt-button-collection button.dt-button:active:not(.disabled),
+div.dt-button-collection button.dt-button.active:not(.disabled), 
+div.dt-button-collection div.dt-button:active:not(.disabled), 
+div.dt-button-collection div.dt-button.active:not(.disabled), 
+div.dt-button-collection a.dt-button:active:not(.disabled), 
+div.dt-button-collection a.dt-button.active:not(.disabled) {
+    @extend %button-default;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+
+button.dt-button, 
+div.dt-button, 
+a.dt-button,
+.path-report-myfeedback .personaltutoremail,
+.path-report-myfeedback .pToggle, 
+.path-report-myfeedback .sToggle, 
+.path-report-myfeedback .aToggle {
+    @extend %button-default;
+    white-space: normal;
+    background-image: none;
+}
+
+.path-report-myfeedback .pToggle, 
+.path-report-myfeedback .sToggle, 
+.path-report-myfeedback .aToggle {
+    margin-right: 8px;
+    margin-left: 0;
+}
+.path-report-myfeedback .aToggle {
+    background: #516fa0 !important;
+    color: #fff !important;
+}
+
+button.dt-button:active:not(.disabled):hover:not(.disabled), 
+button.dt-button.active:not(.disabled):hover:not(.disabled), 
+div.dt-button:active:not(.disabled):hover:not(.disabled), 
+div.dt-button.active:not(.disabled):hover:not(.disabled), 
+a.dt-button:active:not(.disabled):hover:not(.disabled), 
+a.dt-button.active:not(.disabled):hover:not(.disabled) {
+    background-image: none;
+    box-shadow: none;
+}
+
+@media (min-width: 768px) {
+    #tooltip2 {
+        z-index: 1041;
+    }
+}
+
+
+.path-report-myfeedback .personaltutoremail>a {
+    color: #fff;
+}
+.path-report-myfeedback .personaltutoremail {
+    width: 100%;
+    clear: both;
+    margin-right: 0;
+}
+.path-report-myfeedback .mymods-container,
+.path-report-myfeedback .mymods-container-right {
+    display: block;
+    box-sizing: border-box;
+    margin-left:0;
+    margin-right:0;
+}
+.path-report-myfeedback .mymods-container {
+    padding-right: 16px;
+}
+
+.ac-year-right form select {
+    width: 100%;
+}
+
+.ac-year-right form input {
+    float: right;
+}
+.path-report-myfeedback .fullRec {
+    overflow-y: scroll;
+    width: 100%;
+}

@@ -63,7 +63,9 @@ h1, h2, h3, h4, h5, h6,
     }
 }
 
-.btn {
+.btn,
+input[type="submit"],
+input[type="button"] {
     border-radius: 5px !important;
 }
 
@@ -75,6 +77,11 @@ h1, h2, h3, h4, h5, h6,
         background-color: $buttonalt;
         border-color: $buttonalt;
     }
+}
+input[type="search"],
+input[type="text"] {
+    border: 1px solid #ccc;
+    margin: 0 8px;
 }
 
 .btn-group>.btn {
@@ -1502,6 +1509,10 @@ header .navbar-nav {
         }
     }
 }
+
+// My Feedback Plugin Styling
+
+@import "myfeedback";
 
 .path-grade-report-grader #region-main>.card {
     overflow: scroll;
