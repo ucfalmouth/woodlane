@@ -1,4 +1,5 @@
-.path-report-myfeedback #reportPrint {
+.path-report-myfeedback #reportPrint,
+.path-report-myfeedback .buttonswrapper input[type="button"] {
     @extend %button-default;
     background-image: none;
 }
@@ -145,4 +146,23 @@ a.dt-button.active:not(.disabled):hover:not(.disabled) {
 .path-report-myfeedback .fullRec {
     overflow-y: scroll;
     width: 100%;
+}
+
+@media (max-width: 959px) {
+    .path-report-myfeedback .ac-year-right {
+        float: none;
+        margin: 0;
+    }
+}
+
+@media (min-width: 960px) {
+    .ac-year-right ~ p {
+        margin-right: 200px;
+    }
+}
+
+@media (min-width: 1140px) {
+    .ac-year-right ~ p {
+        margin-right: 300px;
+    }
 }
