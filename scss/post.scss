@@ -1530,8 +1530,7 @@ header .navbar-nav {
 }
 
 // #574
-.editing_groupsvisible, 
-.editing_groupsnone  {
+a[class*="editing_groups"] {
     display: none
 }
 
