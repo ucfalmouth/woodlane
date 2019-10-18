@@ -1,0 +1,13 @@
+/* scheduler */
+#page-mod-scheduler-view div[role="main"] {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+#page-mod-scheduler-view div[role="main"] > * {
+    flex: 1 1 100%;
+}
+
+#page-mod-scheduler-view .alert {
+   order: -1;
+}

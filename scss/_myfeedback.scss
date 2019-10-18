@@ -166,3 +166,69 @@ a.dt-button.active:not(.disabled):hover:not(.disabled) {
         margin-right: 300px;
     }
 }
+
+
+.path-report-myfeedback .personaltutoremail>a {
+    display: block;
+}
+.path-report-myfeedback .personaltutoremail>img {
+    display: none;
+}
+
+
+
+.ac-year-right form input[type="submit"] {
+    border-radius: 5px!important;
+    background-color: #516fa0;
+    border: 1px solid #516fa0;
+    margin: 8px 0;
+    padding: 4px 8px;
+    color: #fff;
+    cursor: pointer;
+}
+.ac-year-right form input[type="submit"]:hover {
+    background-color: #40587e;
+    border-color: #40587e;
+    background-image: none;
+}
+
+@media (max-width: 640px) {
+    .path-report-myfeedback .dataTables_length,
+    .path-report-myfeedback .dataTables_filter,
+    .path-report-myfeedback .dt-buttons {
+        margin: 0;
+        margin-bottom: 8px;
+        float: none;
+        text-align: right;
+    }
+    .path-report-myfeedback .dataTables_length {
+        text-align: left;
+    }
+}
+
+@media (max-width: 1100px) {
+    .grades thead .tablefooter {
+        display: none;
+    }
+}
+
+.path-report-myfeedback #reportPrint, 
+.path-report-myfeedback .buttonswrapper input[type="button"], 
+div.dt-button-collection button.dt-button:active:not(.disabled), 
+div.dt-button-collection button.dt-button.active:not(.disabled), 
+div.dt-button-collection div.dt-button:active:not(.disabled), 
+div.dt-button-collection div.dt-button.active:not(.disabled), 
+div.dt-button-collection a.dt-button:active:not(.disabled), 
+div.dt-button-collection a.dt-button.active:not(.disabled), 
+button.dt-button, div.dt-button, a.dt-button, 
+.path-report-myfeedback .personaltutoremail, 
+.path-report-myfeedback .pToggle, 
+.path-report-myfeedback .sToggle, 
+.path-report-myfeedback .aToggle {
+    border: 1px solid #516fa0;
+    font-size: 13px;
+}
+/* ally */
+nav a[data-key="key_report_allylti"] {
+    display: none;
+}
