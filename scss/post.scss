@@ -180,6 +180,10 @@ input[type="text"] {
     background: #323232;
 }
 
+.forgetpass {
+    display: none;
+}
+
 // #FOOTER /////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
 //////////                                                        //////////
@@ -1437,103 +1441,30 @@ header .navbar-nav {
 ////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
 
+@import "plugins/myfeedback";
+@import "plugins/scheduler";
+@import "plugins/ally";
+@import "plugins/filteredcourselist";
+
+
+
+// Other minor fixes
 
 .helpdoclink {
     display: none;
 }
-
-
-// Scheduler
-
-.path-mod-scheduler {
-    div.commandbar {
-        display: flex;
-        justify-content: flex-end;
-        .moodle-actionmenu .menubar .action-menu-trigger {
-            flex: 1 1 auto;
-        }
-    }
-    .maildisplay {
-        background: #d9d9d9;
-        width: 100%;
-    }
-    @media (max-width: 800px) {
-        #region-main-box .card {
-            overflow-y: scroll;
-        }
-    }
-}
-
-
-.block_filtered_course_list h3 {
-    @extend .h3
-}
-
-.block-fcl__rubric {
-    padding: 16px;
-    background: $brandweb;
-    position: relative;
-    margin-top: 10px;
-    a {
-        color: #323232;
-    }
-}
-
-.block-fcl__list {
-    background: #f3f3f3;
-    padding: 16px;
-    margin: 0 0 24px;
-    clear: left;
-}
-
-.jsenabled {
-    .block-fcl__rubric {
-        padding-left: 42px;
-        &:before {
-            content: $fa-var-caret-up;
-            position: absolute;
-            left: 20px;
-            top: 16px;
-            font-family: FontAwesome;
-        }
-    }
-    .block-fcl__rubric--collapsed {
-        background: #f1f1f1;
-        margin: 0 0 10px;
-        &:before {
-            content: $fa-var-caret-down;
-        }
-        &:hover {
-            background: darken(#eee, 10%);
-            transition: background-color .2s;
-        }
-    }
-}
-
-// My Feedback Plugin Styling
-
-@import "myfeedback";
-
 .path-grade-report-grader #region-main>.card {
     overflow: scroll;
 }
-
 .path-grade-report-grader #region-main {
     display: block;
     overflow: scroll;
 }
-
 @media (min-width: 576px) {
     .modal-dialog {
         max-width: 600px;
     }
 }
-
-// #574
 a[class*="editing_groups"] {
     display: none
 }
-
-
-
-@import "scheduler";

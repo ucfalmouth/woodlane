@@ -5,7 +5,6 @@
 }
 .path-report-myfeedback .buttonswrapper {
     overflow: hidden;
-    // float: none !important;
     margin-bottom: 24px;
     margin-top: 24px;
 }
@@ -27,6 +26,10 @@
 }
 .path-report-myfeedback .nav.nav-tabs {
     font-size: 16px;
+}
+.path-report-myfeedback .nav-tabs a[title*="My students"],
+.path-report-myfeedback .nav-tabs a[title*="Usage dashboard"] {
+    display: none;
 }
 .path-report-myfeedback .nav-tabs>li>a:focus {
     background-color: inherit;
@@ -228,7 +231,19 @@ button.dt-button, div.dt-button, a.dt-button,
     border: 1px solid #516fa0;
     font-size: 13px;
 }
-/* ally */
-nav a[data-key="key_report_allylti"] {
+
+.list-group .list-group-item[data-key="localboostnavigationcustomrootusers1"],
+.list-group .list-group-item[data-key="home"] {
+    order: -1;
+}
+
+
+#page-user-profile .node_category a[href*="myfeedback"] {
     display: none;
+}
+
+.path-report-myfeedback .ellip {
+    overflow: visible;
+    white-space: normal;
+    text-overflow: inherit;
 }

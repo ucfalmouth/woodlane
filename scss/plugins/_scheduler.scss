@@ -1,0 +1,38 @@
+/* Scheduler */
+
+#page-mod-scheduler-view {
+    div[role="main"] {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        > * {
+            flex: 1 1 100%;
+        }
+    }
+    .alert {
+        order: -1;
+    }
+}
+
+.path-mod-scheduler {
+    div.commandbar {
+        text-align: right;
+        display: flex;
+        justify-content: flex-end;
+        .moodle-actionmenu .menubar .action-menu-trigger {
+            flex: 1 1 auto;
+        }
+        span.title {
+            float: none;
+        }
+    }
+    .maildisplay {
+        background: #d9d9d9;
+        width: 100%;
+    }
+    @media (max-width: 800px) {
+        #region-main-box .card {
+            overflow-y: scroll;
+        }
+    }
+}
