@@ -88,10 +88,28 @@ input[type="text"] {
     margin: 0 8px;
 }
 
-.btn-group>.btn {
-    border-color: #2f4f4f;
+.btn#id_cancel,
+.btn.btn-secondary[data-action="cancel"],
+.btn.btn-secondary[name*="ancel"] {
+    color: #212529;
+    background-color: #ced4da;
+    border-color: #ced4da;
+    &:hover, &:active, &:focus {
+        background-color: #bec4ca;
+        border-color: #bec4ca;
+    }
 }
 
+.btn-group>.btn {
+    border-color: #4a5d7b;
+    border-radius: 0 !important;
+    &:first-child {
+        border-radius: 5px 0 0 5px !important;
+    }
+    &:last-child {
+        border-radius: 0 5px 5px 0 !important;
+    }
+}
 
 #page.container-fluid {
     margin-top: 0;
