@@ -1454,6 +1454,14 @@ header .navbar-nav {
 .helpdoclink {
     display: none;
 }
+.path-grade-report #maincontent+.urlselect {
+    position: relative;
+    position: initial;
+    left: 0;
+    @media (min-width: 576px) {
+        float: right;
+    }
+}
 .path-grade-report-grader #region-main>.card {
     overflow: scroll;
 }
