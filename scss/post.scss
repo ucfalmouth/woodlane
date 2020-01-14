@@ -1468,3 +1468,9 @@ header .navbar-nav {
 a[class*="editing_groups"] {
     display: none
 }
+#addmembersform .generaltable tbody tr:hover {
+    background: transparent;
+}
+#addmembersform .generaltable tbody tr:first-child:hover {
+    background: rgba(0, 0, 0, .05);
+}
