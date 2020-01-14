@@ -67,9 +67,13 @@ h1, h2, h3, h4, h5, h6,
 input[type="submit"],
 input[type="button"] {
     border-radius: 5px !important;
+    strong {
+        font-weight: normal;
+    }
 }
 
-.btn.btn-primary {
+.btn.btn-primary,
+.btn.btn-secondary {
     color: $textalt;
     background-color: $button;
     border-color: $button;
