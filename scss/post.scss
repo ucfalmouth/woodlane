@@ -1518,3 +1518,22 @@ a[class*="editing_groups"] {
 .text-info, .highlight {
     color: #198f91 !important;
 }
+.activity .filler {
+    display: none;
+}
+
+#page-user-profile #page-header .flex-wrap {
+    > .d-flex {
+        flex-wrap: wrap;
+    }
+    @media (max-width: 479px) {
+        .singlebutton {
+            margin-left: 0;
+            margin-bottom: 8px;
+            width: 100%;
+            .btn {
+                width: 100%;
+            }
+        }
+    }
+}
