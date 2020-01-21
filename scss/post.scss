@@ -67,9 +67,13 @@ h1, h2, h3, h4, h5, h6,
 input[type="submit"],
 input[type="button"] {
     border-radius: 5px !important;
+    strong {
+        font-weight: normal;
+    }
 }
 
-.btn.btn-primary {
+.btn.btn-primary,
+.btn.btn-secondary {
     color: $textalt;
     background-color: $button;
     border-color: $button;
@@ -84,10 +88,28 @@ input[type="text"] {
     margin: 0 8px;
 }
 
-.btn-group>.btn {
-    border-color: #2f4f4f;
+.btn#id_cancel,
+.btn.btn-secondary[data-action="cancel"],
+.btn.btn-secondary[name*="ancel"] {
+    color: #212529;
+    background-color: #ced4da;
+    border-color: #ced4da;
+    &:hover, &:active, &:focus {
+        background-color: #bec4ca;
+        border-color: #bec4ca;
+    }
 }
 
+.btn-group>.btn {
+    border-color: #4a5d7b;
+    border-radius: 0 !important;
+    &:first-child {
+        border-radius: 5px 0 0 5px !important;
+    }
+    &:last-child {
+        border-radius: 0 5px 5px 0 !important;
+    }
+}
 
 #page.container-fluid {
     margin-top: 0;
@@ -180,6 +202,10 @@ input[type="text"] {
     background: #323232;
 }
 
+.forgetpass {
+    display: none;
+}
+
 // #FOOTER /////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
 //////////                                                        //////////
@@ -204,6 +230,7 @@ input[type="text"] {
 .page-footer {
     display: flex;
     align-items: center;
+    padding: 16px 0;
 }
 
 .footer-links {
@@ -1161,7 +1188,7 @@ header .navbar-nav {
 .groupinfobox, 
 .well {
     border-color: rgba(238,238,238,1);
-    overflow-x: scroll;
+    overflow: scroll;
 }
 
 // #925
@@ -1437,101 +1464,76 @@ header .navbar-nav {
 ////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
 
+@import "plugins/myfeedback";
+@import "plugins/scheduler";
+@import "plugins/ally";
+@import "plugins/filteredcourselist";
+@import "plugins/quiz";
+
+
+
+// Other minor fixes
 
 .helpdoclink {
     display: none;
 }
-
-
-// Scheduler
-
-.path-mod-scheduler {
-    div.commandbar {
-        display: flex;
-        justify-content: flex-end;
-        .moodle-actionmenu .menubar .action-menu-trigger {
-            flex: 1 1 auto;
-        }
-    }
-    .maildisplay {
-        background: #d9d9d9;
-        width: 100%;
-    }
-    @media (max-width: 800px) {
-        #region-main-box .card {
-            overflow-y: scroll;
-        }
-    }
-}
-
-
-.block_filtered_course_list h3 {
-    @extend .h3
-}
-
-.block-fcl__rubric {
-    padding: 16px;
-    background: $brandweb;
+.path-grade-report #maincontent+.urlselect {
     position: relative;
-    margin-top: 10px;
-    a {
-        color: #323232;
+    position: initial;
+    left: 0;
+    @media (min-width: 576px) {
+        float: right;
     }
 }
-
-.block-fcl__list {
-    background: #f3f3f3;
-    padding: 16px;
-    margin: 0 0 24px;
-    clear: left;
-}
-
-.jsenabled {
-    .block-fcl__rubric {
-        padding-left: 42px;
-        &:before {
-            content: $fa-var-caret-up;
-            position: absolute;
-            left: 20px;
-            top: 16px;
-            font-family: FontAwesome;
-        }
-    }
-    .block-fcl__rubric--collapsed {
-        background: #f1f1f1;
-        margin: 0 0 10px;
-        &:before {
-            content: $fa-var-caret-down;
-        }
-        &:hover {
-            background: darken(#eee, 10%);
-            transition: background-color .2s;
-        }
-    }
-}
-
-// My Feedback Plugin Styling
-
-@import "myfeedback";
-
 .path-grade-report-grader #region-main>.card {
     overflow: scroll;
 }
-
 .path-grade-report-grader #region-main {
     display: block;
     overflow: scroll;
 }
-
 @media (min-width: 576px) {
     .modal-dialog {
         max-width: 600px;
     }
 }
-
-// #574
-.editing_groupsvisible, 
-.editing_groupsnone  {
+a[class*="editing_groups"] {
     display: none
 }
+#addmembersform .generaltable tbody tr:hover {
+    background: transparent;
+}
+#addmembersform .generaltable tbody tr:first-child:hover {
+    background: rgba(0, 0, 0, .05);
+}
 
+.badge-info {
+    color: #fff;
+    background-color: #198f91;
+}
+.badge-success {
+    color: #fff;
+    background-color: #19913e;
+}
+.text-info, .highlight {
+    color: #198f91 !important;
+}
+.activity .filler {
+    display: none;
+}
+
+#page-user-profile #page-header .flex-wrap {
+    > .d-flex {
+        flex-wrap: wrap;
+    }
+    @media (max-width: 479px) {
+        .singlebutton {
+            margin-left: 0;
+            margin-bottom: 8px;
+            width: 100%;
+            .btn {
+                width: 100%;
+            }
+        }
+    }
+}

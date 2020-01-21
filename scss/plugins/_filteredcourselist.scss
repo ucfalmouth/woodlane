@@ -1,0 +1,49 @@
+.block_filtered_course_list h3 {
+    @extend .h3
+}
+
+.block-fcl__rubric {
+    padding: 16px;
+    background: $brandweb;
+    position: relative;
+    margin-top: 10px;
+
+    a {
+        color: #323232;
+    }
+}
+
+.block-fcl__list {
+    background: #f3f3f3;
+    padding: 16px;
+    margin: 0 0 24px;
+    clear: left;
+}
+
+.jsenabled {
+    .block-fcl__rubric {
+        padding-left: 42px;
+
+        &:before {
+            content: $fa-var-caret-up;
+            position: absolute;
+            left: 20px;
+            top: 16px;
+            font-family: FontAwesome;
+        }
+    }
+
+    .block-fcl__rubric--collapsed {
+        background: #f1f1f1;
+        margin: 0 0 10px;
+
+        &:before {
+            content: $fa-var-caret-down;
+        }
+
+        &:hover {
+            background: darken(#eee, 10%);
+            transition: background-color .2s;
+        }
+    }
+}

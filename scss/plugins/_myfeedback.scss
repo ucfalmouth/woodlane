@@ -5,7 +5,6 @@
 }
 .path-report-myfeedback .buttonswrapper {
     overflow: hidden;
-    // float: none !important;
     margin-bottom: 24px;
     margin-top: 24px;
 }
@@ -27,6 +26,10 @@
 }
 .path-report-myfeedback .nav.nav-tabs {
     font-size: 16px;
+}
+.path-report-myfeedback .nav-tabs a[title*="My students"],
+.path-report-myfeedback .nav-tabs a[title*="Usage dashboard"] {
+    display: none;
 }
 .path-report-myfeedback .nav-tabs>li>a:focus {
     background-color: inherit;
@@ -165,4 +168,82 @@ a.dt-button.active:not(.disabled):hover:not(.disabled) {
     .ac-year-right ~ p {
         margin-right: 300px;
     }
+}
+
+
+.path-report-myfeedback .personaltutoremail>a {
+    display: block;
+}
+.path-report-myfeedback .personaltutoremail>img {
+    display: none;
+}
+
+
+
+.ac-year-right form input[type="submit"] {
+    border-radius: 5px!important;
+    background-color: #516fa0;
+    border: 1px solid #516fa0;
+    margin: 8px 0;
+    padding: 4px 8px;
+    color: #fff;
+    cursor: pointer;
+}
+.ac-year-right form input[type="submit"]:hover {
+    background-color: #40587e;
+    border-color: #40587e;
+    background-image: none;
+}
+
+@media (max-width: 640px) {
+    .path-report-myfeedback .dataTables_length,
+    .path-report-myfeedback .dataTables_filter,
+    .path-report-myfeedback .dt-buttons {
+        margin: 0;
+        margin-bottom: 8px;
+        float: none;
+        text-align: right;
+    }
+    .path-report-myfeedback .dataTables_length {
+        text-align: left;
+    }
+}
+
+@media (max-width: 1100px) {
+    .grades thead .tablefooter {
+        display: none;
+    }
+}
+
+.path-report-myfeedback #reportPrint, 
+.path-report-myfeedback .buttonswrapper input[type="button"], 
+div.dt-button-collection button.dt-button:active:not(.disabled), 
+div.dt-button-collection button.dt-button.active:not(.disabled), 
+div.dt-button-collection div.dt-button:active:not(.disabled), 
+div.dt-button-collection div.dt-button.active:not(.disabled), 
+div.dt-button-collection a.dt-button:active:not(.disabled), 
+div.dt-button-collection a.dt-button.active:not(.disabled), 
+button.dt-button, div.dt-button, a.dt-button, 
+.path-report-myfeedback .personaltutoremail, 
+.path-report-myfeedback .pToggle, 
+.path-report-myfeedback .sToggle, 
+.path-report-myfeedback .aToggle {
+    border: 1px solid #516fa0;
+    font-size: 13px;
+}
+
+.list-group .list-group-item[data-key="localboostnavigationcustomrootusers1"],
+.list-group .list-group-item[data-key="home"] {
+    order: -1;
+}
+
+
+#page-user-profile .node_category a[href*="myfeedback"] {
+    display: none;
+}
+
+.path-report-myfeedback .ellip {
+    overflow: visible;
+    white-space: normal;
+    text-overflow: inherit;
 }

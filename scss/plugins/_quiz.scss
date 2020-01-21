@@ -1,0 +1,19 @@
+// Quiz
+
+.path-mod-quiz input[size] {
+    display: inline-block;
+}
+@media (max-width: 576px) {
+    #page-mod-quiz-edit .maxgrade,
+    #page-mod-quiz-edit .totalpoints {
+        position: initial;
+        right: 0;
+        margin: 16px 0;
+        padding: 0;
+        display: block;
+    }
+}
+
+#page-mod-quiz-edit ul.slots li.section li.activity .activityinstance {
+    width: calc(100% - 5em);
+}
