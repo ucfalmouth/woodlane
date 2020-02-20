@@ -1,6 +1,6 @@
 /* Scheduler */
 
-#page-mod-scheduler-view {
+#page-mod-scheduler-view:not(.ie) {
     div[role="main"] {
         display: flex;
         flex-direction: column;
