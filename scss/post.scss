@@ -351,22 +351,6 @@ header.navbar {
 
 }
 
-.user-menu-wrapper .singlebutton button {
-    color: #333;
-    background: transparent;
-    border-color: #333;
-    transition: background-color .3s, color .3s;
-    @include media-breakpoint-down(md) {
-        @include btn-sm();
-    }
-    &:hover {
-        color: #fff;
-        background: #333;
-        border-color: #333;
-        transition: background-color .3s, color .3s;
-    }
-}
-
 header .site-name {
     display: none;
     @include media-breakpoint-up(sm) {
@@ -410,7 +394,27 @@ header .navbar-nav {
     > * {
        margin: 0 8px; 
     }
+
+    .singlebutton button {
+        color: #333;
+        background: transparent;
+        border-color: #333;
+        transition: background-color .3s, color .3s;
+
+        @include media-breakpoint-down(md) {
+            @include btn-sm();
+        }
+
+        &:hover,
+        &:focus {
+            color: #fff;
+            background: #333;
+            border-color: #333;
+            transition: background-color .3s, color .3s;
+        }
+    }
 }
+
 .ls-elevio-trigger .icon {
     margin: 0;
 }
