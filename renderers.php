@@ -968,7 +968,7 @@ class theme_woodlane_format_topics_renderer extends format_topics_renderer {
             
             }            
             
-            $o.= $this->output->heading($sectionname, 3, 'sectionname' . $classes);
+            $o.= $this->output->heading($sectionname, 2, 'sectionname' . $classes);
             
             if ($defaultCollapse) {
             
@@ -988,7 +988,7 @@ class theme_woodlane_format_topics_renderer extends format_topics_renderer {
         
         } else {
             $sectionname = html_writer::tag('span', $this->section_title($section, $course), array('class'=>'topic-heading'));
-            $o.= $this->output->heading($sectionname, 3, 'sectionname' . $classes);
+            $o.= $this->output->heading($sectionname, 2, 'sectionname' . $classes);
             $o .= html_writer::start_tag('div', array('class' => 'topic-wrapper'));
             $o .= html_writer::start_tag('div', array('class'=>'topic-content'));
         }
@@ -1043,7 +1043,7 @@ class theme_woodlane_format_topics_renderer extends format_topics_renderer {
         // Title with completion help icon.
         $completioninfo = new completion_info($course);
         echo $completioninfo->display_help_icon();
-        echo $this->output->heading($this->page_title(), 2, 'accesshide');
+        // echo $this->output->heading($this->page_title(), 2, 'accesshide');
 
         // Copy activity clipboard..
         echo $this->course_activity_clipboard($course, 0);
