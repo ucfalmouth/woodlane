@@ -41,7 +41,9 @@ h1, h2, h3, h4, h5, h6,
     font-weight: 600;
     margin: .5em 0 1em;
 }
-
+ul, ol {
+    padding-left: 40px;
+}
 @include media-breakpoint-down(sm) {
     h1 {
         font-size: 2rem;
@@ -977,7 +979,10 @@ header .navbar-nav {
     }
 }
 
-
+.topic-content ul,
+.topic-content ol {
+    margin-bottom: 1em;
+}
 
 :target {
     padding-top: inherit !important;
@@ -1474,7 +1479,7 @@ header .navbar-nav {
 @import "plugins/ally";
 @import "plugins/filteredcourselist";
 @import "plugins/quiz";
-
+@import "plugins/workshop";
 
 
 // Other minor fixes
@@ -1541,4 +1546,15 @@ a[class*="editing_groups"] {
             }
         }
     }
+}
+
+.fp-filename {
+    word-break: break-word;
+}
+
+.atto_image_button_left {
+    margin: 0 36px 0 0;
+}
+.atto_image_button_right {
+    margin: 0 0 0 36px;
 }

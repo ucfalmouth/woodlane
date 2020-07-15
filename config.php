@@ -139,3 +139,8 @@ $THEME->scss = function($theme) {
 $THEME->footeritems = function(){
     return theme_woodlane_get_custom_footer();
 };
+
+$THEME->rarrow = '<i class="fas fa-caret-right"></i>';
+$THEME->larrow = '<i class="fas fa-caret-left"></i>';
+$THEME->uarrow = '<i class="fas fa-caret-up"></i>';
+$THEME->darrow = '<i class="fas fa-caret-down"></i>';
