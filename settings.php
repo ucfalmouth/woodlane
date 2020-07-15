@@ -80,6 +80,20 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');                                                                        
     $page->add($setting);                                                                                                           
  
-    $settings->add($page);   
+    $settings->add($page);
+    
+    $page = new admin_settingpage('theme_woodlane_custom', get_string('customsettings', 'theme_woodlane'));                           
+ 
+    $setting = new admin_setting_configcheckbox('theme_woodlane/collapsetopics',                                                              
+        get_string('collapsetopics', 'theme_woodlane'), get_string('collapsetopics_desc', 'theme_woodlane'), 0, 1, 0);
+    $setting->set_updatedcallback('theme_reset_all_caches');                                                                        
+    $page->add($setting);                                                                                                                                                                                                
+ 
+    $setting = new admin_setting_configcheckbox('theme_woodlane/expandcurrent',                                                              
+        get_string('expandcurrent', 'theme_woodlane'), get_string('expandcurrent_desc', 'theme_woodlane'), 0, 1, 0);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    $settings->add($page);
 
 }

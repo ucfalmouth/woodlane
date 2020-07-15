@@ -24,7 +24,13 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+
 $string['advancedsettings'] = 'Advanced settings';
+$string['customsettings'] = 'Custom settings';
+$string['collapsetopics'] = 'Collapse topic sections';
+$string['collapsetopics_desc'] = 'Choose whether to collapse all sections on page load. This setting is disabled by default.';
+$string['expandcurrent'] = 'Expand current section';
+$string['expandcurrent_desc'] = 'Show current section when all sections are collapsed on page load. This setting only works if Collapse Topics (above) is enabled.';
 $string['backgroundimage'] = 'Background image';
 $string['backgroundimage_desc'] = 'The image to display as a background of the site. The background image you upload here will override the background image in your theme preset files.';
 $string['brandcolor'] = 'Brand colour';

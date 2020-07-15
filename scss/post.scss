@@ -929,7 +929,7 @@ header .navbar-nav {
         padding: 20px 50px 20px 14px;
         color: $dark;
         background: $lighter;
-        transition: background-color .8s;
+        transition: background-color .3s;
         text-decoration: none;
         position: relative;
         @include media-breakpoint-up(md) {
@@ -938,8 +938,9 @@ header .navbar-nav {
     }
     a.topic-heading {    
         &:hover {
-            color: $brandweb;
+            background-color: #fcf3d6;
             text-decoration: none;
+            transition: background-color .3s;
         }
         
         &:after {
@@ -958,7 +959,7 @@ header .navbar-nav {
 
     a.collapsed {
         background: $lightest;
-        transition: background-color .8s;
+        transition: background-color .3s;
 
         &:after {
             content: $fa-var-caret-down;
