@@ -917,10 +917,18 @@ header .navbar-nav {
         z-index: 1;
     }
 }
-
-.editing .course-content ul.topics li.section {
-    .left, .right {
-        padding: 0 16px;
+:target::before {
+    height: inherit;
+    margin: inherit;
+}
+.editing {
+    .course-content ul.topics li.section {
+        .left, .right {
+            padding: 0 16px;
+        }
+    }
+    :target::before {
+        display: none;
     }
 }
 
@@ -1001,9 +1009,9 @@ header .navbar-nav {
 // }
 .collapse-content,
 .topic-content {
-    padding: 32px 20px;
+    padding: 32px 20px 48px;
     @include media-breakpoint-down(sm) {
-        padding: 32px 14px;
+        padding: 32px 14px 48px;
     }
 }
 .pagelayout-frontpage #region-main > .card {
