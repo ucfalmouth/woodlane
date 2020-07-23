@@ -894,7 +894,7 @@ class theme_woodlane_format_topics_renderer extends format_topics_renderer {
         $sectionstyle = '';
         
         $defaultCollapse = get_config('theme_woodlane', 'collapsetopics');
-        $expandCurrent = get_config('theme_woodlane', 'expandcurrent');
+        $expandTopicChoice = get_config('theme_woodlane', 'expandtopicchoice');
         $currentSection = course_get_format($course)->is_section_current($section);
 
         if ($section->section != 0) {
@@ -945,7 +945,9 @@ class theme_woodlane_format_topics_renderer extends format_topics_renderer {
                 $hiddentag = $this->output->pix_icon('i/show', '');
 
                 if ($defaultCollapse) {
-                    if ($expandCurrent && $currentSection) {
+                    if (($expandTopicChoice == 'expandcurrent') && $currentSection) {
+                        $sectionname = html_writer::tag('a', $title . $hiddentag, $sectionExpandedAttr);
+                    } elseif (($expandTopicChoice == 'expandoverview') && ($section->section == 0)){
                         $sectionname = html_writer::tag('a', $title . $hiddentag, $sectionExpandedAttr);
                     } else {
                         $sectionname = html_writer::tag('a', $title . $hiddentag, $sectionCollapsedAttr);    
@@ -957,7 +959,9 @@ class theme_woodlane_format_topics_renderer extends format_topics_renderer {
             } else {
             
                 if ($defaultCollapse) {
-                    if ($expandCurrent && $currentSection) {
+                    if (($expandTopicChoice == 'expandcurrent') && $currentSection) {
+                        $sectionname = html_writer::tag('a', $title, $sectionExpandedAttr);
+                    } elseif (($expandTopicChoice == 'expandoverview') && ($section->section == 0)){
                         $sectionname = html_writer::tag('a', $title, $sectionExpandedAttr);
                     } else {
                         $sectionname = html_writer::tag('a', $title, $sectionCollapsedAttr);    
@@ -972,7 +976,9 @@ class theme_woodlane_format_topics_renderer extends format_topics_renderer {
             
             if ($defaultCollapse) {
             
-                if ($expandCurrent && $currentSection) {
+                if (($expandTopicChoice == 'expandcurrent') && $currentSection) {
+                    $o .= html_writer::start_tag('div', array('class' => 'collapse-wrapper collapse multi-collapse show', 'id'=>$titleTrimmed));
+                } elseif (($expandTopicChoice == 'expandoverview') && ($section->section == 0)){
                     $o .= html_writer::start_tag('div', array('class' => 'collapse-wrapper collapse multi-collapse show', 'id'=>$titleTrimmed));
                 } else {
                     $o .= html_writer::start_tag('div', array('class' => 'collapse-wrapper collapse multi-collapse', 'id'=>$titleTrimmed));
