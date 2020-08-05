@@ -892,13 +892,17 @@ class theme_woodlane_format_topics_renderer extends format_topics_renderer {
         $o = '';
         $currenttext = '';
         $sectionstyle = '';
+        
+        $defaultCollapse = get_config('theme_woodlane', 'collapsetopics');
+        $expandTopicChoice = get_config('theme_woodlane', 'expandtopicchoice');
+        $currentSection = course_get_format($course)->is_section_current($section);
 
         if ($section->section != 0) {
             // Only in the non-general sections.
             if (!$section->visible) {
                 $sectionstyle = ' hidden';
             }
-            if (course_get_format($course)->is_section_current($section)) {
+            if ($currentSection) {
                 $sectionstyle = ' current';
             }
         }
@@ -932,19 +936,65 @@ class theme_woodlane_format_topics_renderer extends format_topics_renderer {
             //
             $title = get_section_name($course, $section);
             $titleTrimmed = 'cs-'.strtolower(preg_replace('/\W+/', '', $title));
+    
+            $sectionExpandedAttr = array('data-toggle'=>'collapse', 'href'=>'#'.$titleTrimmed, 'aria-expanded'=>'true', 'aria-controls'=>$titleTrimmed, 'class'=>'collapse-header topic-heading');
+            $sectionCollapsedAttr = array('data-toggle'=>'collapse', 'href'=>'#'.$titleTrimmed, 'aria-expanded'=>'false', 'aria-controls'=>$titleTrimmed, 'class'=>'collapse-header topic-heading collapsed');
             
             if (!$section->visible) {
+            
                 $hiddentag = $this->output->pix_icon('i/show', '');
-                $sectionname = html_writer::tag('a', $title . $hiddentag, array('data-toggle'=>'collapse', 'href'=>'#'.$titleTrimmed, 'aria-expanded'=>'true', 'aria-controls'=>$titleTrimmed, 'class'=>'collapse-header topic-heading'));
+
+                if ($defaultCollapse) {
+                    if (($expandTopicChoice == 'expandcurrent') && $currentSection) {
+                        $sectionname = html_writer::tag('a', $title . $hiddentag, $sectionExpandedAttr);
+                    } elseif (($expandTopicChoice == 'expandoverview') && ($section->section == 0)){
+                        $sectionname = html_writer::tag('a', $title . $hiddentag, $sectionExpandedAttr);
+                    } else {
+                        $sectionname = html_writer::tag('a', $title . $hiddentag, $sectionCollapsedAttr);    
+                    }
+                } else {
+                    $sectionname = html_writer::tag('a', $title . $hiddentag, $sectionExpandedAttr);
+                }
+            
             } else {
-                $sectionname = html_writer::tag('a', $title, array('data-toggle'=>'collapse', 'href'=>'#'.$titleTrimmed, 'aria-expanded'=>'true', 'aria-controls'=>$titleTrimmed, 'class'=>'collapse-header topic-heading'));
+            
+                if ($defaultCollapse) {
+                    if (($expandTopicChoice == 'expandcurrent') && $currentSection) {
+                        $sectionname = html_writer::tag('a', $title, $sectionExpandedAttr);
+                    } elseif (($expandTopicChoice == 'expandoverview') && ($section->section == 0)){
+                        $sectionname = html_writer::tag('a', $title, $sectionExpandedAttr);
+                    } else {
+                        $sectionname = html_writer::tag('a', $title, $sectionCollapsedAttr);    
+                    }
+                } else {
+                    $sectionname = html_writer::tag('a', $title, $sectionExpandedAttr);
+                }
+            
             }            
-            $o.= $this->output->heading($sectionname, 3, 'sectionname' . $classes);
-            $o .= html_writer::start_tag('div', array('class' => 'collapse-wrapper collapse multi-collapse show', 'id'=>$titleTrimmed));
+            
+            $o.= $this->output->heading($sectionname, 2, 'sectionname' . $classes);
+            
+            if ($defaultCollapse) {
+            
+                if (($expandTopicChoice == 'expandcurrent') && $currentSection) {
+                    $o .= html_writer::start_tag('div', array('class' => 'collapse-wrapper collapse multi-collapse show', 'id'=>$titleTrimmed));
+                } elseif (($expandTopicChoice == 'expandoverview') && ($section->section == 0)){
+                    $o .= html_writer::start_tag('div', array('class' => 'collapse-wrapper collapse multi-collapse show', 'id'=>$titleTrimmed));
+                } else {
+                    $o .= html_writer::start_tag('div', array('class' => 'collapse-wrapper collapse multi-collapse', 'id'=>$titleTrimmed));
+                }
+            
+            } else {
+            
+                $o .= html_writer::start_tag('div', array('class' => 'collapse-wrapper collapse multi-collapse show', 'id'=>$titleTrimmed));
+            
+            }
+            
             $o .= html_writer::start_tag('div', array('class'=>'collapse-content'));
+        
         } else {
             $sectionname = html_writer::tag('span', $this->section_title($section, $course), array('class'=>'topic-heading'));
-            $o.= $this->output->heading($sectionname, 3, 'sectionname' . $classes);
+            $o.= $this->output->heading($sectionname, 2, 'sectionname' . $classes);
             $o .= html_writer::start_tag('div', array('class' => 'topic-wrapper'));
             $o .= html_writer::start_tag('div', array('class'=>'topic-content'));
         }
@@ -999,7 +1049,7 @@ class theme_woodlane_format_topics_renderer extends format_topics_renderer {
         // Title with completion help icon.
         $completioninfo = new completion_info($course);
         echo $completioninfo->display_help_icon();
-        echo $this->output->heading($this->page_title(), 2, 'accesshide');
+        // echo $this->output->heading($this->page_title(), 2, 'accesshide');
 
         // Copy activity clipboard..
         echo $this->course_activity_clipboard($course, 0);

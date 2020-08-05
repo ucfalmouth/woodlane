@@ -24,7 +24,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$footerlinks = array('&copy; Falmouth University','<a href="">Copyright compliance</a>','<a href="https://et.falmouth.ac.uk/">Educational Technology</a>','<a class="release-notes"  href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTyxlPQ1UGeI__wbqG0XUHo1c3SxOxLbqcPt-j_p1CHCVB0OdJ0DqLfxuPRPu343YHfuLEr-GrNzNno/pubhtml">Release notes</a>','<a href="https://portal.falmouth.ac.uk/">Portal</a>');
+$footerlinks = array('&copy; Falmouth University','<a href="">Copyright compliance</a>','<a href="https://et.falmouth.ac.uk/">Digital Learning</a>','<a class="release-notes"  href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTyxlPQ1UGeI__wbqG0XUHo1c3SxOxLbqcPt-j_p1CHCVB0OdJ0DqLfxuPRPu343YHfuLEr-GrNzNno/pubhtml">Release notes</a>','<a href="https://portal.falmouth.ac.uk/">Portal</a>');
 
 ?>
 

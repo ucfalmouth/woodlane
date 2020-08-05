@@ -41,7 +41,9 @@ h1, h2, h3, h4, h5, h6,
     font-weight: 600;
     margin: .5em 0 1em;
 }
-
+ul, ol {
+    padding-left: 40px;
+}
 @include media-breakpoint-down(sm) {
     h1 {
         font-size: 2rem;
@@ -915,10 +917,18 @@ header .navbar-nav {
         z-index: 1;
     }
 }
-
-.editing .course-content ul.topics li.section {
-    .left, .right {
-        padding: 0 16px;
+:target::before {
+    height: inherit;
+    margin: inherit;
+}
+.editing {
+    .course-content ul.topics li.section {
+        .left, .right {
+            padding: 0 16px;
+        }
+    }
+    :target::before {
+        display: none;
     }
 }
 
@@ -929,7 +939,7 @@ header .navbar-nav {
         padding: 20px 50px 20px 14px;
         color: $dark;
         background: $lighter;
-        transition: background-color .8s;
+        transition: background-color .3s;
         text-decoration: none;
         position: relative;
         @include media-breakpoint-up(md) {
@@ -938,8 +948,9 @@ header .navbar-nav {
     }
     a.topic-heading {    
         &:hover {
-            color: $brandweb;
+            background-color: #fcf3d6;
             text-decoration: none;
+            transition: background-color .3s;
         }
         
         &:after {
@@ -958,7 +969,7 @@ header .navbar-nav {
 
     a.collapsed {
         background: $lightest;
-        transition: background-color .8s;
+        transition: background-color .3s;
 
         &:after {
             content: $fa-var-caret-down;
@@ -976,7 +987,10 @@ header .navbar-nav {
     }
 }
 
-
+.topic-content ul,
+.topic-content ol {
+    margin-bottom: 1em;
+}
 
 :target {
     padding-top: inherit !important;
@@ -995,9 +1009,9 @@ header .navbar-nav {
 // }
 .collapse-content,
 .topic-content {
-    padding: 32px 20px;
+    padding: 32px 20px 48px;
     @include media-breakpoint-down(sm) {
-        padding: 32px 14px;
+        padding: 32px 14px 48px;
     }
 }
 .pagelayout-frontpage #region-main > .card {
@@ -1473,7 +1487,7 @@ header .navbar-nav {
 @import "plugins/ally";
 @import "plugins/filteredcourselist";
 @import "plugins/quiz";
-
+@import "plugins/workshop";
 
 
 // Other minor fixes
@@ -1540,4 +1554,15 @@ a[class*="editing_groups"] {
             }
         }
     }
+}
+
+.fp-filename {
+    word-break: break-word;
+}
+
+.atto_image_button_left {
+    margin: 0 36px 0 0;
+}
+.atto_image_button_right {
+    margin: 0 0 0 36px;
 }
