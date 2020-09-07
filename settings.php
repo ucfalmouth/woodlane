@@ -107,4 +107,159 @@ if ($ADMIN->fulltree) {
 
     $settings->add($page);
 
+
+    
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//    Custom footer links
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// add another tab
+
+$page = new admin_settingpage('theme_woodlane_footer', get_string('themefootertitle', 'theme_woodlane')); 
+
+                              
+    $setting = new admin_setting_configcheckbox('theme_woodlane/usecustomfooterlinks',                                                              
+        get_string('usecustomfooterlinks', 'theme_woodlane'), get_string('usecustomfooterlinks_desc', 'theme_woodlane'), 0, 1, 0);
+    $setting->set_updatedcallback('theme_reset_all_caches');                                                                        
+    $page->add($setting);
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Link 1
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    $setting = new admin_setting_heading('theme_woodlane/footerlinkheading1', get_string('footerlinkheading1', 'theme_woodlane'), '');
+    $setting->set_updatedcallback('theme_reset_all_caches');                                                                        
+    $page->add($setting);
+
+
+    $setting = new admin_setting_configtext('theme_woodlane/footerlinktext1', get_string('footerlinktext', 'theme_woodlane'),                           
+        get_string('footerlinktext_desc', 'theme_woodlane'), '', PARAM_RAW);
+    $setting->set_updatedcallback('theme_reset_all_caches');                                                                        
+    $page->add($setting);
+    $setting = new admin_setting_configtext('theme_woodlane/footerlinkurl1', get_string('footerlinkurl', 'theme_woodlane'),                           
+        get_string('footerlinkurl_desc', 'theme_woodlane'), '', PARAM_RAW);
+    $setting->set_updatedcallback('theme_reset_all_caches');                                                                        
+    $page->add($setting);
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Link 2
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    $setting = new admin_setting_heading('theme_woodlane/footerlinkheading2', 'Link 2', '');
+    $setting->set_updatedcallback('theme_reset_all_caches');                                                                        
+    $page->add($setting);
+
+
+    $setting = new admin_setting_configtext('theme_woodlane/footerlinktext2', get_string('footerlinktext', 'theme_woodlane'),                           
+        get_string('footerlinktext_desc', 'theme_woodlane'), '', PARAM_RAW);
+    $setting->set_updatedcallback('theme_reset_all_caches');                                                                        
+    $page->add($setting);
+    $setting = new admin_setting_configtext('theme_woodlane/footerlinkurl2', get_string('footerlinkurl', 'theme_woodlane'),                           
+        get_string('footerlinkurl_desc', 'theme_woodlane'), '', PARAM_RAW);
+    $setting->set_updatedcallback('theme_reset_all_caches');                                                                        
+    $page->add($setting);
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Link 3
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    $setting = new admin_setting_heading('theme_woodlane/footerlinkheading3', 'Link 3', '');
+    $setting->set_updatedcallback('theme_reset_all_caches');                                                                        
+    $page->add($setting);
+
+
+    $setting = new admin_setting_configtext('theme_woodlane/footerlinktext3', get_string('footerlinktext', 'theme_woodlane'),                           
+        get_string('footerlinktext_desc', 'theme_woodlane'), '', PARAM_RAW);
+    $setting->set_updatedcallback('theme_reset_all_caches');                                                                        
+    $page->add($setting);
+    $setting = new admin_setting_configtext('theme_woodlane/footerlinkurl3', get_string('footerlinkurl', 'theme_woodlane'),                           
+        get_string('footerlinkurl_desc', 'theme_woodlane'), '', PARAM_RAW);
+    $setting->set_updatedcallback('theme_reset_all_caches');                                                                        
+    $page->add($setting);
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Link 4
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    $setting = new admin_setting_heading('theme_woodlane/footerlinkheading4', 'Link 4', '');
+    $setting->set_updatedcallback('theme_reset_all_caches');                                                                        
+    $page->add($setting);
+
+
+    $setting = new admin_setting_configtext('theme_woodlane/footerlinktext4', get_string('footerlinktext', 'theme_woodlane'),                           
+        get_string('footerlinktext_desc', 'theme_woodlane'), '', PARAM_RAW);
+    $setting->set_updatedcallback('theme_reset_all_caches');                                                                        
+    $page->add($setting);
+    $setting = new admin_setting_configtext('theme_woodlane/footerlinkurl4', get_string('footerlinkurl', 'theme_woodlane'),                           
+        get_string('footerlinkurl_desc', 'theme_woodlane'), '', PARAM_RAW);
+    $setting->set_updatedcallback('theme_reset_all_caches');                                                                        
+    $page->add($setting);
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Link 5
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    $setting = new admin_setting_heading('theme_woodlane/footerlinkheading5', 'Link 5', '');
+    $setting->set_updatedcallback('theme_reset_all_caches');                                                                        
+    $page->add($setting);
+
+
+    $setting = new admin_setting_configtext('theme_woodlane/footerlinktext5', get_string('footerlinktext', 'theme_woodlane'),                           
+        get_string('footerlinktext_desc', 'theme_woodlane'), '', PARAM_RAW);
+    $setting->set_updatedcallback('theme_reset_all_caches');                                                                        
+    $page->add($setting);
+    $setting = new admin_setting_configtext('theme_woodlane/footerlinkurl5', get_string('footerlinkurl', 'theme_woodlane'),                           
+        get_string('footerlinkurl_desc', 'theme_woodlane'), '', PARAM_RAW);
+    $setting->set_updatedcallback('theme_reset_all_caches');                                                                        
+    $page->add($setting);
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Link 6
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    $setting = new admin_setting_heading('theme_woodlane/footerlinkheading6', 'Link 6', '');
+    $setting->set_updatedcallback('theme_reset_all_caches');                                                                        
+    $page->add($setting);
+
+
+    $setting = new admin_setting_configtext('theme_woodlane/footerlinktext6', get_string('footerlinktext', 'theme_woodlane'),                           
+        get_string('footerlinktext_desc', 'theme_woodlane'), '', PARAM_RAW);
+    $setting->set_updatedcallback('theme_reset_all_caches');                                                                        
+    $page->add($setting);
+    $setting = new admin_setting_configtext('theme_woodlane/footerlinkurl6', get_string('footerlinkurl', 'theme_woodlane'),                           
+        get_string('footerlinkurl_desc', 'theme_woodlane'), '', PARAM_RAW);
+    $setting->set_updatedcallback('theme_reset_all_caches');                                                                        
+    $page->add($setting);
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Link 7
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    $setting = new admin_setting_heading('theme_woodlane/footerlinkheading7', 'Link 7', '');
+    $setting->set_updatedcallback('theme_reset_all_caches');                                                                        
+    $page->add($setting);
+
+
+    $setting = new admin_setting_configtext('theme_woodlane/footerlinktext7', get_string('footerlinktext', 'theme_woodlane'),                           
+        get_string('footerlinktext_desc', 'theme_woodlane'), '', PARAM_RAW);
+    $setting->set_updatedcallback('theme_reset_all_caches');                                                                        
+    $page->add($setting);
+    $setting = new admin_setting_configtext('theme_woodlane/footerlinkurl7', get_string('footerlinkurl', 'theme_woodlane'),                           
+        get_string('footerlinkurl_desc', 'theme_woodlane'), '', PARAM_RAW);
+    $setting->set_updatedcallback('theme_reset_all_caches');                                                                        
+    $page->add($setting);
+
+
+
+
+
+
+    $settings->add($page);
+
 }

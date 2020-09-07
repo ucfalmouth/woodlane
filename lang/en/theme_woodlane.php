@@ -51,3 +51,19 @@ $string['rawscsspre'] = 'Raw initial SCSS';
 $string['rawscsspre_desc'] = 'In this field you can provide initialising SCSS code, it will be injected before everything else. Most of the time you will use this setting to define variables.';
 $string['region-side-pre'] = 'Right';
 $string['region-home-list'] = 'Custom course list region';
+
+// Footer links
+$string['themefootertitle'] = 'Custom Footer Links';
+$string['usecustomfooterlinks'] = 'Use custom footer links';
+$string['usecustomfooterlinks_desc'] = 'Selecting this option will overwrite all the default footer links and replace them with what is below.';
+$string['footerlinktext'] = 'Link text';
+$string['footerlinktext_desc'] = '';
+$string['footerlinkurl'] = 'Link URL';
+$string['footerlinkurl_desc'] = '';
+$string['footerlinkheading1'] = 'Link 1';
+$string['footerlinkheading2'] = 'Link 2';
+$string['footerlinkheading3'] = 'Link 3';
+$string['footerlinkheading4'] = 'Link 4';
+$string['footerlinkheading5'] = 'Link 5';
+$string['footerlinkheading6'] = 'Link 6';
+$string['footerlinkheading7'] = 'Link 7';

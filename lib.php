@@ -57,8 +57,48 @@ function theme_woodlane_get_main_scss_content($theme) {
     return $pre . "\n" . $scss . "\n" . $post;                                                                                      
 }
 
+
+function theme_woodlane_get_custom_footer_links() {
+
+    $footerlinks = [
+
+        'link1'=> [
+            'text' => trim(get_config('theme_woodlane', 'footerlinktext1')), 
+            'url'  => trim(get_config('theme_woodlane', 'footerlinkurl1'))
+        ],
+        'link2'=> [
+            'text' => trim(get_config('theme_woodlane', 'footerlinktext2')), 
+            'url'  => trim(get_config('theme_woodlane', 'footerlinkurl2'))
+        ],
+        'link3'=> [
+            'text' => trim(get_config('theme_woodlane', 'footerlinktext3')), 
+            'url'  => trim(get_config('theme_woodlane', 'footerlinkurl3'))
+        ],
+        'link4'=> [
+            'text' => trim(get_config('theme_woodlane', 'footerlinktext4')), 
+            'url'  => trim(get_config('theme_woodlane', 'footerlinkurl4'))
+        ],
+        'link5'=> [
+            'text' => trim(get_config('theme_woodlane', 'footerlinktext5')), 
+            'url'  => trim(get_config('theme_woodlane', 'footerlinkurl5'))
+        ],
+        'link6'=> [
+            'text' => trim(get_config('theme_woodlane', 'footerlinktext6')), 
+            'url'  => trim(get_config('theme_woodlane', 'footerlinkurl6'))
+        ],
+        'link7'=> [
+            'text' => trim(get_config('theme_woodlane', 'footerlinktext7')), 
+            'url'  => trim(get_config('theme_woodlane', 'footerlinkurl7'))
+        ]
+    ];
+    
+    return $footerlinks;
+
+}
+
 function theme_woodlane_get_custom_footer() {
-    $footeritems = array(
+    
+    $defaultfooter = array(
         '<a href="http://www.falmouth.ac.uk/" class="nav-link falu">&copy; ' . date('Y') . ' Falmouth University</a>',
         '<a href="http://et.falmouth.ac.uk" class="nav-link edtech">Digital Learning</a>',
         '<a href="https://falmouthac.sharepoint.com/ict/info/Shared%20Documents/Forms/AllItems.aspx?id=%2Fict%2Finfo%2FShared%20Documents%2FMoodle%20Copyright%20%26%20Data%20Protection%20Statement%2Epdf&parent=%2Fict%2Finfo%2FShared%20Documents&p=true&slrid=7e9f7d9e-50c7-6000-1297-403eb05f7bff" class="nav-link copyright">Copyright compliance</a>',
@@ -66,6 +106,27 @@ function theme_woodlane_get_custom_footer() {
         '<a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTyxlPQ1UGeI__wbqG0XUHo1c3SxOxLbqcPt-j_p1CHCVB0OdJ0DqLfxuPRPu343YHfuLEr-GrNzNno/pubhtml" data-url="https://spreadsheets.google.com/feeds/list/1iYMDWkX6jA38sxq6IAzkqIJkcxnzJbMSFSEB038lkp8/od6/public/values?alt=json" class="nav-link release-notes-link">Release notes</a>',
         '<a href="https://student.falmouth.ac.uk" class="nav-link portal">Student portal</a>'
     );
-    return $footeritems;
+
+    $usecustomfooter = get_config('theme_woodlane', 'usecustomfooterlinks');
+    
+    
+    if ($usecustomfooter == 1) {
+        $customfooterlinks = theme_woodlane_get_custom_footer_links();
+        $customfooter = [
+            '<a href="http://www.falmouth.ac.uk/" class="nav-link">&copy; ' . date('Y') . ' Falmouth University</a>'
+        ];
+        
+        foreach ($customfooterlinks as $value) {
+            if ( isset($value, $value['text'], $value['url']) && ( !empty($value['text']) && !empty($value['url']) ) ) {
+                $customfooter[] = '<a href="'.$value['url'].'" class="nav-link">'.$value['text'].'</a>';
+            }
+        }
+
+        $customfooter[] = '<a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTyxlPQ1UGeI__wbqG0XUHo1c3SxOxLbqcPt-j_p1CHCVB0OdJ0DqLfxuPRPu343YHfuLEr-GrNzNno/pubhtml" data-url="https://spreadsheets.google.com/feeds/list/1iYMDWkX6jA38sxq6IAzkqIJkcxnzJbMSFSEB038lkp8/od6/public/values?alt=json" class="nav-link release-notes-link">Release notes</a>';
+
+        return $customfooter;
+    } else {
+        return $defaultfooter;
+    }
 }
 
