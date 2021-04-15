@@ -1558,3 +1558,8 @@ a[class*="editing_groups"] {
 .atto_image_button_right {
     margin: 0 0 0 36px;
 }
+
+// Hide course level edit button - temp css fix
+.pagelayout-course #page-header .singlebutton form {
+    display: none;
+}
