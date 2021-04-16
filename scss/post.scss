@@ -84,11 +84,6 @@ input[type="button"] {
         border-color: $buttonalt;
     }
 }
-input[type="search"],
-input[type="text"] {
-    border: 1px solid #ccc;
-    margin: 0 8px;
-}
 
 .btn#id_cancel,
 .btn.btn-secondary[data-action="cancel"],
@@ -1562,4 +1557,12 @@ a[class*="editing_groups"] {
 // Hide course level edit button - temp css fix
 .pagelayout-course #page-header .singlebutton form {
     display: none;
+}
+
+// Activity chooser - increase width of cards
+@media (min-width: 992px) {
+    .modchoosercontainer .optionscontainer .option,
+    .modchoosercontainer .searchresultitemscontainer .option {
+        flex-basis: calc(20% - .5rem);
+    }
 }
