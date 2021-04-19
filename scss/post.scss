@@ -1560,9 +1560,10 @@ a[class*="editing_groups"] {
 }
 
 // Activity chooser - increase width of cards
-@media (min-width: 992px) {
-    .modchoosercontainer .optionscontainer .option,
-    .modchoosercontainer .searchresultitemscontainer .option {
+.modchoosercontainer .optionscontainer .option,
+.modchoosercontainer .searchresultitemscontainer .option {
+    overflow: hidden;
+    @media (min-width: 992px) {
         flex-basis: calc(20% - .5rem);
     }
 }
