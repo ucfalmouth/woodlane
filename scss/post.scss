@@ -1605,7 +1605,9 @@ body:not(.editing) .section .activity.label .actions {
     padding: 10px 20px;
     margin-bottom: 1rem;
 }
-.section .activity .contentwithoutlink,
 .section .activity .activityinstance {
     padding-right: 30px;
+}
+.activity.label .alert {
+    padding-right: 60px;
 }
