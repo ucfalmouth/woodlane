@@ -1611,3 +1611,15 @@ body:not(.editing) .section .activity.label .actions {
 .activity.label .alert {
     padding-right: 60px;
 }
+
+// Course header adjustment for mobile
+@media (max-width: 767.98px) {
+    #page-header .card .card-body {
+        padding: .75rem;
+    }
+    .breadcrumb:not(:empty) {
+        border: none;
+        padding: 0;
+        margin: 0rem;
+    }
+}
