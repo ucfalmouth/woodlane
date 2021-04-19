@@ -73,7 +73,7 @@
                     <div> {{{ output.region_main_settings_menu }}} </div>
                 </div>
                 {{/hasregionmainsettingsmenu}}
-                <section id="region-main" {{#hasblocks}}class="has-blocks"{{/hasblocks}}>
+                <section id="region-main" {{#hasblocks}}class="has-blocks"{{/hasblocks}} aria-label="{{#str}}content{{/str}}">
                     <div class="card">
                         <div class="card-body">
                             {{#hasregionmainsettingsmenu}}
@@ -87,7 +87,7 @@
                     </div>
                 </section>
                 {{#hasblocks}}
-                <section data-region="blocks-column" class="d-print-none">
+                <section data-region="blocks-column" class="d-print-none" aria-label="{{#str}}blocks{{/str}}">
                     {{{ sidepreblocks }}}
                 </section>
                 {{/hasblocks}}
@@ -110,10 +110,21 @@ require.config({
         }
     }
 });
-require(['theme_boost/loader']);
+{{! require(['theme_boost/loader']);
 require(['theme_boost/drawer'], function(mod) {
     mod.init();
+}); }}
+M.util.js_pending('theme_boost/loader');
+require(['theme_boost/loader'], function() {
+    M.util.js_complete('theme_boost/loader');
 });
+
+M.util.js_pending('theme_boost/drawer');
+require(['theme_boost/drawer'], function(drawer) {
+    drawer.init();
+    M.util.js_complete('theme_boost/drawer');
+});
+
 require(['theme_woodlane/release-notes'], function(releases){
     var template = $('#release-template').html()
     releases.init(template);
