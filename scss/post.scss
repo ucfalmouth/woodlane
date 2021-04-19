@@ -1585,3 +1585,22 @@ a[class*="editing_groups"] {
 .table tbody tr th {
     vertical-align: middle
 }
+
+// Acitivity completion alignment  
+.editing .section .activity .editing_move {
+    top: 3px;
+}
+.editing .section .label .editing_move {
+    left: 5px;
+}
+.section .activity .actions {
+    top: 3px;
+}
+body:not(.editing) .section .activity.label .actions {
+    top: 18px;
+    right: 20px;
+}
+.editing .section .activity.modtype_label.label {
+    padding: 10px 20px;
+    margin-bottom: 1rem;
+}
