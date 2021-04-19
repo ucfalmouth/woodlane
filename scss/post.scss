@@ -1566,3 +1566,17 @@ a[class*="editing_groups"] {
         flex-basis: calc(20% - .5rem);
     }
 }
+
+// Dropdown menu focus within fixes
+.dropdown-item:focus-within {
+    background-color: initial;
+    a {
+        color: #212529;
+    }
+    &:hover {
+        background-color: #0f6fc5;
+        a {
+            color: #fff;
+        }
+    }
+}
