@@ -1581,6 +1581,13 @@ a[class*="editing_groups"] {
         }
     }
 }
+.dropdown-menu:focus-within a.dropdown-item:focus {
+    color: #333;
+}
+.dropdown-menu:focus-within a.dropdown-item:focus:hover {
+    color: #fff;
+}
+
 
 // Filtered particpant alignment
 .table tbody tr th {
