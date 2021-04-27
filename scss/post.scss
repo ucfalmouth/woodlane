@@ -84,11 +84,6 @@ input[type="button"] {
         border-color: $buttonalt;
     }
 }
-input[type="search"],
-input[type="text"] {
-    border: 1px solid #ccc;
-    margin: 0 8px;
-}
 
 .btn#id_cancel,
 .btn.btn-secondary[data-action="cancel"],
@@ -1105,14 +1100,6 @@ header .navbar-nav {
 }
 
 
-// Course settings
-
-#id_descriptionhdr,
-#id_courseformathdr,
-#id_rolerenaming {
-    display: none;
-}
-
 // Front page
 
 #page-site-index #page-content { // ids :(
@@ -1565,4 +1552,81 @@ a[class*="editing_groups"] {
 }
 .atto_image_button_right {
     margin: 0 0 0 36px;
+}
+
+// Hide course level edit button - temp css fix
+.pagelayout-course #page-header .singlebutton form {
+    display: none;
+}
+
+// Activity chooser - increase width of cards
+.modchoosercontainer .optionscontainer .option,
+.modchoosercontainer .searchresultitemscontainer .option {
+    overflow: hidden;
+    @media (min-width: 992px) {
+        flex-basis: calc(20% - .5rem);
+    }
+}
+
+// Dropdown menu focus within fixes
+.dropdown-item:focus-within {
+    background-color: initial;
+    a {
+        color: #212529;
+    }
+    &:hover {
+        background-color: #0f6fc5;
+        a {
+            color: #fff;
+        }
+    }
+}
+.dropdown-menu:focus-within a.dropdown-item:focus {
+    color: #333;
+}
+.dropdown-menu:focus-within a.dropdown-item:focus:hover {
+    color: #fff;
+}
+
+
+// Filtered particpant alignment
+.table tbody tr th {
+    vertical-align: middle
+}
+
+// Acitivity completion alignment  
+.editing .section .activity .editing_move {
+    top: 3px;
+}
+.editing .section .label .editing_move {
+    left: 5px;
+}
+.section .activity .actions {
+    top: 3px;
+}
+body:not(.editing) .section .activity.label .actions {
+    top: 18px;
+    right: 20px;
+}
+.editing .section .activity.modtype_label.label {
+    padding: 10px 20px;
+    margin-bottom: 1rem;
+}
+.section .activity .activityinstance {
+    padding-right: 30px;
+}
+.activity.label .alert {
+    padding-right: 60px;
+}
+
+// Course header adjustment for mobile
+@media (max-width: 767.98px) {
+    #page-header .card .card-body {
+        padding: .75rem;
+    }
+    .breadcrumb:not(:empty) {
+        border: none;
+        padding: 0;
+        margin: 0rem;
+    }
 }

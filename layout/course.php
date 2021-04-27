@@ -39,7 +39,11 @@ if ($navdraweropen) {
 $bodyattributes = $OUTPUT->body_attributes($extraclasses);
 $blockshtml = $OUTPUT->blocks('side-pre');
 $hasblocks = strpos($blockshtml, 'data-block=') !== false;
-$regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
+// $regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
+$buildregionmainsettings = !$PAGE->include_region_main_settings_in_header_actions();
+// If the settings menu will be included in the header then don't add it here.
+$regionmainsettingsmenu = $buildregionmainsettings ? $OUTPUT->region_main_settings_menu() : false;
+
 
 // $footeritems = array('&copy; ' . date('Y') . ' Falmouth University','<a href="#" class="nav-link">Copyright compliance</a>','<a href="http://et.falmouth.ac.uk" class="nav-link">Educational Technology</a>','<a href="#" class="nav-link">Release notes</a>','<a class="nav-link" href="http://portal.falmouth.ac.uk">Portal</a>');
 $logourl = $this->pix_url('logo_white_2x', 'theme');
@@ -57,5 +61,8 @@ $templatecontext = [
     'logourl' => $logourl
 ];
 
-$templatecontext['flatnavigation'] = $PAGE->flatnav;
+// $templatecontext['flatnavigation'] = $PAGE->flatnav;
+$nav = $PAGE->flatnav;
+$templatecontext['flatnavigation'] = $nav;
+$templatecontext['firstcollectionlabel'] = $nav->get_collectionlabel();
 echo $OUTPUT->render_from_template('theme_woodlane/course', $templatecontext);

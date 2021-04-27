@@ -68,9 +68,9 @@
     <div id="page" class="container-fluid">
 
         <div id="page-content" class="row">
-            <div id="region-main-box" class="col-xs-12">
+            <div id="region-main-box" class="col-12">
                 {{#hasregionmainsettingsmenu}}
-                <div id="region-main-settings-menu" class="hidden-print {{#hasblocks}}has-blocks{{/hasblocks}}">
+                <div id="region-main-settings-menu" class="d-print-none {{#hasblocks}}has-blocks{{/hasblocks}}">
                     <div> {{{ output.region_main_settings_menu }}} </div>
                 </div>
                 {{/hasregionmainsettingsmenu}}
@@ -91,7 +91,7 @@
 
                 </section>
                 {{#hasblocks}}
-                <section data-region="blocks-column" class="hidden-print">
+                <section data-region="blocks-column" class="d-print-none">
                     {{{ sidepreblocks }}}
                 </section>
                 {{/hasblocks}}
