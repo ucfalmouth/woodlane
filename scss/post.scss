@@ -494,7 +494,7 @@ header .navbar-nav {
     .dropdown-menu .dropdown-item {
         border-bottom: 1px solid $darkest;
         padding: 16px 26px;
-        color: $lightest;
+        color: $lightest !important;
         background: $dark;
         z-index: 12;
         position: relative;
