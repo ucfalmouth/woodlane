@@ -24,16 +24,13 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$logourl = $this->pix_url('logo_white_2x', 'theme');
-
 $bodyattributes = $OUTPUT->body_attributes();
 
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
     'output' => $OUTPUT,
     'bodyattributes' => $bodyattributes,
-    'footeritems' => theme_woodlane_get_custom_footer(),
-    'logourl' => $logourl
+    'footeritems' => theme_woodlane_get_custom_footer()
 ];
 
 echo $OUTPUT->render_from_template('theme_woodlane/login', $templatecontext);

@@ -48,7 +48,7 @@ $buildregionmainsettings = !$PAGE->include_region_main_settings_in_header_action
 // If the settings menu will be included in the header then don't add it here.
 $regionmainsettingsmenu = $buildregionmainsettings ? $OUTPUT->region_main_settings_menu() : false;
 
-$logourl = $this->pix_url('logo_white_2x', 'theme');
+// $logourl = $this->image_url('logo_white_2x', 'theme');
 
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
@@ -62,7 +62,7 @@ $templatecontext = [
     'regionmainsettingsmenu' => $regionmainsettingsmenu,
     'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
     'footeritems' => theme_woodlane_get_custom_footer(),
-    'logourl' => $logourl
+    // 'logourl' => $logourl
 ];
 
 // $templatecontext['flatnavigation'] = $PAGE->flatnav;

@@ -40,7 +40,7 @@ $footerlinks = array('&copy; Falmouth University','<a href="">Copyright complian
 	
         <div class="footer-logo">
             <a href="http://www.falmouth.ac.uk/">
-                <img src="<?php $this->pix_url('logo_white_2x', 'theme')?>" alt="Falmouth University logo">
+                <img src="<?php $this->image_url('logo_white_2x', 'theme')?>" alt="Falmouth University logo">
             </a>
         </div>
     </div>

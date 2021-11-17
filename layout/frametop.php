@@ -24,9 +24,6 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$footeritems = array('&copy; ' . date('Y') . ' Falmouth University','<a href="">Copyright compliance</a>','<a href="">Educational Technology</a>','<a href="">Release notes</a>','<a href="">Portal</a>');
-$logourl = $this->pix_url('logo_white_2x', 'theme');
-
 $bodyattributes = $OUTPUT->body_attributes([]);
 
 $referer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '/';
@@ -35,8 +32,7 @@ $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
     'output' => $OUTPUT,
     'bodyattributes' => $bodyattributes,
-    'footeritems' => $footeritems,
-    'logourl' => $logourl,
+    'footeritems' => theme_woodlane_get_custom_footer(),
     'referer' => $referer,
 ];
 

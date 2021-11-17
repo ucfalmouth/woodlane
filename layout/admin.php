@@ -47,8 +47,6 @@ $blockshtml = $OUTPUT->blocks('side-pre', 'nonavbar');
 $hasblocks = strpos($blockshtml, 'data-block=') !== false;
 $regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
 
-$logourl = $this->pix_url('logo_white_2x', 'theme');
-
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
     'output' => $OUTPUT,
@@ -58,8 +56,7 @@ $templatecontext = [
     'navdraweropen' => $navdraweropen,
     'regionmainsettingsmenu' => $regionmainsettingsmenu,
     'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
-    'footeritems' => theme_woodlane_get_custom_footer(),
-    'logourl' => $logourl
+    'footeritems' => theme_woodlane_get_custom_footer()
 ];
 
 $templatecontext['flatnavigation'] = $PAGE->flatnav;

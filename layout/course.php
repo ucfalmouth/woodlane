@@ -44,10 +44,6 @@ $buildregionmainsettings = !$PAGE->include_region_main_settings_in_header_action
 // If the settings menu will be included in the header then don't add it here.
 $regionmainsettingsmenu = $buildregionmainsettings ? $OUTPUT->region_main_settings_menu() : false;
 
-
-// $footeritems = array('&copy; ' . date('Y') . ' Falmouth University','<a href="#" class="nav-link">Copyright compliance</a>','<a href="http://et.falmouth.ac.uk" class="nav-link">Educational Technology</a>','<a href="#" class="nav-link">Release notes</a>','<a class="nav-link" href="http://portal.falmouth.ac.uk">Portal</a>');
-$logourl = $this->pix_url('logo_white_2x', 'theme');
-
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
     'output' => $OUTPUT,
@@ -57,8 +53,7 @@ $templatecontext = [
     'navdraweropen' => $navdraweropen,
     'regionmainsettingsmenu' => $regionmainsettingsmenu,
     'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
-    'footeritems' => theme_woodlane_get_custom_footer(),
-    'logourl' => $logourl
+    'footeritems' => theme_woodlane_get_custom_footer()
 ];
 
 // $templatecontext['flatnavigation'] = $PAGE->flatnav;
