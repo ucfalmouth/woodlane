@@ -241,6 +241,10 @@ class theme_woodlane_core_renderer extends \theme_boost\output\core_renderer {
             $user = $USER;
         }
 
+        if (!isloggedin() || isguestuser()) {
+            return '';
+        }
+
         // Get some navigation opts.
         $opts = user_get_user_navigation_info($user, $this->page);
         $content = '';
