@@ -99,17 +99,10 @@
 </div>
 
 {{{ output.standard_end_of_body_html }}}
-{{> theme_woodlane/release-notes-overlay }}
+
 </body>
 </html>
 {{#js}}
-require.config({
-    shim: {
-        underscore: {
-            exports: '_'
-        }
-    }
-});
 {{! require(['theme_boost/loader']);
 require(['theme_boost/drawer'], function(mod) {
     mod.init();
@@ -125,9 +118,5 @@ require(['theme_boost/drawer'], function(drawer) {
     M.util.js_complete('theme_boost/drawer');
 });
 
-require(['theme_woodlane/release-notes'], function(releases){
-    var template = $('#release-template').html()
-    releases.init(template);
-});
 require(['theme_woodlane/elevio-help']);
 {{/js}}
