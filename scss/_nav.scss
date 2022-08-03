@@ -1,5 +1,5 @@
 .header-logo {
-	height: 35px; /*25px mobile*/ 
+	height: 35px;
 	display: inline; 
 	float: left; 
 	margin-right: .3em;
@@ -105,4 +105,11 @@
 #nav-drawer .list-group .collapsed[data-key="onthispage"]:after {
 	content: "\f0dd";
 	top: 7px;
+}
+
+// adjustment for mobile
+@media (max-width: 415px) {
+	.header-logo {
+		height: 25px;
+	} 
 }
