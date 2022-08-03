@@ -44,6 +44,13 @@ $buildregionmainsettings = !$PAGE->include_region_main_settings_in_header_action
 // If the settings menu will be included in the header then don't add it here.
 $regionmainsettingsmenu = $buildregionmainsettings ? $OUTPUT->region_main_settings_menu() : false;
 
+$isAdmin = 0;
+$coursecontext = get_context_instance(CONTEXT_COURSE, $COURSE->id);
+if( has_capability('moodle/site:config', $coursecontext) ) {
+    $isAdmin = 1;
+}
+
+
 $logourl = $this->pix_url('logo_white_2x', 'theme');
 
 $templatecontext = [
@@ -56,7 +63,8 @@ $templatecontext = [
     'regionmainsettingsmenu' => $regionmainsettingsmenu,
     'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
     'footeritems' => theme_woodlane_get_custom_footer(),
-    'logourl' => $logourl
+    'logourl' => $logourl,
+    'isadmin' => $isAdmin
 ];
 
 // $templatecontext['flatnavigation'] = $PAGE->flatnav;
