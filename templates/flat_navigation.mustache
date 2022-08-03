@@ -67,7 +67,7 @@
             {{#is_section}}
                 <div class="media">
                     <span class="media-left">
-                        {{#pix}}i/folder{{/pix}}
+                        {{#pix}}e/left_to_right{{/pix}}
                     </span>
                     <span class="media-body">{{{text}}}</span>
                 </div>
@@ -97,3 +97,7 @@
     {{/action}}
 {{/ flatnavigation }}
 </nav>
+
+{{#js}}
+require(['theme_woodlane/nav']);
+{{/js}}
