@@ -1,0 +1,108 @@
+.header-logo {
+	height: 35px; /*25px mobile*/ 
+	display: inline; 
+	float: left; 
+	margin-right: .3em;
+}
+#nav-drawer {
+	background-color: #000;
+}
+/* NAVIGATION: CONVERT TO FLEX LAYOUT FOR CONTROL OVER VIEW ORDER */
+#nav-drawer .list-group {
+	display: flex;
+	flex-direction: column;
+	margin-left: 15px;
+}
+/* TARGET: COURSE (NAME) */
+#nav-drawer .list-group [data-key="coursehome"] {
+	background-color: #F4F4F4;
+	color: #333;
+	font-weight: bold;
+	border-bottom: none;
+	border-top-left-radius: 10px;
+	order: 1;
+}
+/* TARGET: COURSE (PAGE SECTIONS) */
+#nav-drawer .list-group .is-section {
+	background-color: #F4F4F4;
+	color: #fff;
+	margin: 0;
+	padding: 0 0 0 15px;
+	order: 3;
+}
+#nav-drawer .list-group .is-section div {
+	background-color: #116A6C; 
+	padding: 5px 5px 0 5px;
+}
+#nav-drawer .list-group .is-section:hover {
+	color: #F6CE4C;
+}
+/* TARGET: LAST ENTRY IN NAV */
+#nav-drawer .list-group .is-section:last-child div {
+	padding-bottom: 1px;
+	margin-bottom: 15px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+/* TARGET: ON THIS PAGE - ***ADDED VIA JQUERY*** */
+#nav-drawer .list-group [data-key="onthispage"],
+/* TARGET: GRADES */
+#nav-drawer .list-group [data-key="grades"],
+/* TARGET: PARTCIPANTS */
+#nav-drawer .list-group [data-key="participants"] {
+	color: #fff;
+	border-bottom: none;
+	margin-bottom: 15px;
+	padding: 0 0 10px 15px;
+	background-color: #F4F4F4;
+}
+#nav-drawer .list-group [data-key="onthispage"] div,
+#nav-drawer .list-group [data-key="grades"] div,
+#nav-drawer .list-group [data-key="participants"] div {
+	background-color: #0D5557;
+	padding: 10px;
+	margin-bottom: 5px;
+	border-radius: 5px;
+}
+
+/* NAV: STYLING OVERRIDES */
+#nav-drawer .list-group [data-key="onthispage"] {
+	margin-bottom: 0;
+	padding-bottom: 0;
+	cursor: pointer;
+	order: 2;
+}
+#nav-drawer .list-group [data-key="onthispage"] div {
+	margin-bottom: 0;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+#nav-drawer .list-group .collapsed[data-key="onthispage"] div {
+	margin-bottom: 15px;
+	border-radius: 5px;
+}
+#nav-drawer .list-group [data-key="grades"] {
+	margin-bottom: 0;
+	order: 4;
+}
+#nav-drawer .list-group [data-key="participants"] {
+	border-bottom-left-radius: 10px;
+	order: 5;
+}
+#nav-drawer .list-group [data-key="grades"]:before,
+#nav-drawer .list-group [data-key="participants"]:before {
+	display: none;
+}
+
+/* TOGGLE INDICATOR/STATES FOR "ON THIS PAGE" */
+#nav-drawer .list-group [data-key="onthispage"]:after {
+	content: "\f0de";
+	position: absolute;
+	right: 15px;
+	top: 14px;
+	font-family: FontAwesome;
+}
+#nav-drawer .list-group .collapsed[data-key="onthispage"]:after {
+	content: "\f0dd";
+	top: 7px;
+}
