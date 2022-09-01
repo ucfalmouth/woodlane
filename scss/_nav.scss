@@ -99,17 +99,38 @@
 	content: "\f0de";
 	position: absolute;
 	right: 15px;
-	top: 14px;
+	top: .8rem;
 	font-family: FontAwesome;
+	font-size: 20px;
+	transform: rotateX(0);
+	transition: transform .3s, top .2s;
 }
 #nav-drawer .list-group .collapsed[data-key="onthispage"]:after {
-	content: "\f0dd";
-	top: 7px;
+	// content: "\f0dd";
+	top: .1rem;
+	transform: rotateX(180deg);
 }
 
 // adjustment for mobile
 @media (max-width: 415px) {
 	.header-logo {
 		height: 25px;
+	}
+}
+@media (max-width: 767px) {
+	#nav-drawer {
+		box-shadow: 5px 2px 7px 0 rgba(0,0,0,.4);
+	}
+
+	#nav-drawer .list-group {
+		margin-left: 0;
+	}
+
+	#nav-drawer .list-group [data-key="coursehome"],
+	#nav-drawer .list-group [data-key="onthispage"],
+	#nav-drawer .list-group [data-key="grades"],
+	#nav-drawer .list-group [data-key="participants"],
+	#nav-drawer .list-group .is-section {
+		padding-left: 10px;
 	}
 }
