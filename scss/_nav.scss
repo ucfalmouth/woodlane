@@ -55,6 +55,7 @@
 	margin-bottom: 15px;
 	padding: 0 0 10px 15px;
 	background-color: #F4F4F4;
+	transition: color .2s;
 }
 #nav-drawer .list-group [data-key="onthispage"] div,
 #nav-drawer .list-group [data-key="grades"] div,
@@ -92,6 +93,13 @@
 #nav-drawer .list-group [data-key="grades"]:before,
 #nav-drawer .list-group [data-key="participants"]:before {
 	display: none;
+}
+
+/* HOVER STYLING */
+#nav-drawer .list-group [data-key="onthispage"]:hover,
+#nav-drawer .list-group [data-key="grades"]:hover,
+#nav-drawer .list-group [data-key="participants"]:hover {
+	color: #F6CE4C;
 }
 
 /* TOGGLE INDICATOR/STATES FOR "ON THIS PAGE" */
