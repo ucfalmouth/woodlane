@@ -1,0 +1,238 @@
+//
+// General layout styling
+//
+
+.pagelayout-mydashboard #region-main {
+    padding-bottom: 1.75rem;
+}
+
+.card {
+    overflow: visible;
+}
+
+// 
+// Course overview (block_myoverview)
+//
+
+.dashboard-card-deck .dashboard-card {
+    border-radius: 10px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+    border: none;
+
+}
+
+.dashboard-card-deck .dashboard-card .dashboard-card-img {
+    height: 2.5rem;
+    background: #198f91 !important;
+    border-radius: 10px 10px 0 0;
+}
+
+.dashboard-card-deck .dashboard-card:nth-child(4n+1) .dashboard-card-img {
+    background: #079091 !important;
+}
+
+.dashboard-card-deck .dashboard-card:nth-child(4n+2) .dashboard-card-img {
+    background: #538F8F !important;
+}
+
+.dashboard-card-deck .dashboard-card:nth-child(4n+3) .dashboard-card-img {
+    background: #536D8F !important;
+}
+
+.dashboard-card-deck .dashboard-card:nth-child(4n+4) .dashboard-card-img {
+    background: #34537B !important;
+}
+
+.dashboard-card-deck .course-info-container {
+    min-height: 10rem;
+}
+
+.block .block-cards a.coursename {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.block .block-cards span.categoryname {
+    background: #eee;
+    padding: .2rem .8rem;
+    border-radius: 5px;
+    margin-bottom: .5rem;
+    font-style: italic
+}
+
+
+// 
+// Recently accessed courses (block_recentlyaccessedcourses)
+//
+
+
+//
+// Timeline (block_timeline)
+//
+
+
+//
+// Calendar (block_calendar_month)
+//
+
+.pagelayout-mydashboard {
+    #page .dropdown-toggle {
+        border-color: rgb(209 213 219);
+        font-size: .9rem;
+
+    }
+
+    #page .dropdown-toggle:hover,
+    #page .dropdown-toggle:active,
+    #page .dropdown-toggle:focus,
+    #page .show>.dropdown-toggle {
+        color: #333;
+        background: #f3f3f3;
+        border-color: rgb(209 213 219);
+    }
+
+    #page .dropdown-toggle:hover:after,
+    #page .dropdown-toggle:active:after,
+    #page .dropdown-toggle:focus:after,
+    #page .show>.dropdown-toggle:after {
+        color: #333;
+    }
+
+    #page .dropdown-toggle:hover i,
+    #page .dropdown-toggle:active i,
+    #page .dropdown-toggle:focus i,
+    #page .show>.dropdown-toggle i {
+        color: #333
+    }
+
+    #page .dropdown-menu {
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 5px 10px rgb(0 0 0 / 10%);
+        z-index: 10000;
+    }
+
+    #page .dropdown-item {
+        color: #333;
+    }
+
+    #page .dropdown-item:active,
+    #page .dropdown-item:hover,
+    #page .dropdown-item:focus,
+    #page .dropdown-item:focus-within,
+    #page .dropdown-item.active {
+        background: #168183;
+        color: #fff;
+    }
+}
+
+.block-myoverview [data-region="filter"] {
+
+    margin: 1rem 0 1rem;
+
+}
+
+.pagelayout-mydashboard #region-main {
+    // width: calc(50% - 16px);
+}
+
+.pagelayout-mydashboard [data-region="blocks-column"] {
+    // width: 50%;
+}
+
+.block_timeline {}
+
+.block_timeline .list-group {
+    background: none;
+    margin-top: .3rem;
+}
+
+.block_timeline .list-group .list-group-item {
+    background: #f3f3f3;
+    padding: 1rem .5rem !important;
+    margin-bottom: 2px;
+    border-radius: 4px;
+    position: relative;
+}
+
+.block_timeline .list-group .list-group-item:hover {
+    background: #f3f3f3;
+    transition: all .3s;
+}
+
+.block_timeline .list-group-item small {
+    color: #333;
+}
+
+.block-timeline .list-group-item .icon {
+    align-self: center;
+}
+
+
+.block-timeline .list-group .list-group-item {
+    border: 1px solid #f3f3f3 !important;
+}
+
+.block-timeline .list-group .list-group-item:first-child {
+    border-radius: 5px 5px 0 0;
+}
+
+.block-timeline .list-group .list-group-item:last-child {
+    border-radius: 0 0 5px 5px;
+}
+
+.block-timeline .list-group .list-group-item:only-child {
+    border-radius: 5px;
+}
+
+.block-timeline .list-group .list-group-item+.list-group-item {
+    margin-top: -1px
+}
+
+.block-myoverview .dropdown-item[data-value="summary"] {
+    display: none;
+}
+
+
+
+
+
+.block-myoverview .card-body span[data-region="favourite-icon"] .icon,
+.block-myoverview .list-group span[data-region="favourite-icon"] .icon {
+    color: #f3ba00;
+}
+
+.block-myoverview .list-group {
+    background: transparent;
+    overflow: visible;
+
+    .icon {
+        color: #333;
+    }
+
+    a.coursename {
+        font-size: 1.175rem;
+    }
+
+    .list-group-item {
+        background: #f5f5f4;
+        margin-bottom: .5rem;
+        color: #333;
+        position: relative;
+
+        &:before {
+            content: "";
+            width: 8px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #198f91;
+        }
+
+        span.categoryname {
+            background: #ccc;
+            font-size: .8rem;
+        }
+    }
+}

@@ -30,7 +30,6 @@
 
 @import "ls-variables";
 
-
 body {
     background: #f4f4f4;
     font-size: .875rem; // override the increase of latest update
@@ -1382,3 +1381,6 @@ body:not(.editing) .section .activity.label .actions {
         margin: 0rem;
     }
 }
+
+@import "dashboard";
+@import "nav"
