@@ -19,7 +19,6 @@
 	color: #333;
 	font-weight: bold;
 	border-bottom: none;
-	// border-top-left-radius: 10px;
 	order: 1;
 }
 /* TARGET: COURSE (PAGE SECTIONS) */
@@ -41,8 +40,6 @@
 #nav-drawer .list-group .is-section:last-child div {
 	padding-bottom: 1px;
 	margin-bottom: 15px;
-	// border-bottom-left-radius: 5px;
-	// border-bottom-right-radius: 5px;
 }
 /* TARGET: ON THIS PAGE - ***ADDED VIA JQUERY*** */
 #nav-drawer .list-group [data-key="onthispage"],
@@ -63,7 +60,6 @@
 	background-color: #0D5557;
 	padding: 10px;
 	margin-bottom: 5px;
-	// border-radius: 5px;
 }
 
 /* NAV: STYLING OVERRIDES */
@@ -75,19 +71,15 @@
 }
 #nav-drawer .list-group [data-key="onthispage"] div {
 	margin-bottom: 0;
-	// border-bottom-left-radius: 0;
-	// border-bottom-right-radius: 0;
 }
 #nav-drawer .list-group .collapsed[data-key="onthispage"] div {
 	margin-bottom: 15px;
-	// border-radius: 5px;
 }
 #nav-drawer .list-group [data-key="grades"] {
 	margin-bottom: 0;
 	order: 4;
 }
 #nav-drawer .list-group [data-key="participants"] {
-	// border-bottom-left-radius: 10px;
 	order: 5;
 }
 #nav-drawer .list-group [data-key="grades"]:before,
@@ -95,7 +87,10 @@
 	display: none;
 }
 
-/* HOVER STYLING */
+/* ACTIVE/HOVER STYLING */
+#nav-drawer .list-group .is-active[data-key="grades"],
+#nav-drawer .list-group .is-active[data-key="participants"],
+#nav-drawer .list-group .is-section.is-active,
 #nav-drawer .list-group [data-key="onthispage"]:hover,
 #nav-drawer .list-group [data-key="grades"]:hover,
 #nav-drawer .list-group [data-key="participants"]:hover {
@@ -114,7 +109,6 @@
 	transition: transform .3s, top .2s;
 }
 #nav-drawer .list-group .collapsed[data-key="onthispage"]:after {
-	// content: "\f0dd";
 	top: .1rem;
 	transform: rotateX(180deg);
 }
