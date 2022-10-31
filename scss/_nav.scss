@@ -95,7 +95,10 @@
 	display: none;
 }
 
-/* HOVER STYLING */
+/* ACTIVE/HOVER STYLING */
+#nav-drawer .list-group .is-active[data-key="grades"],
+#nav-drawer .list-group .is-active[data-key="participants"],
+#nav-drawer .list-group .is-section.is-active,
 #nav-drawer .list-group [data-key="onthispage"]:hover,
 #nav-drawer .list-group [data-key="grades"]:hover,
 #nav-drawer .list-group [data-key="participants"]:hover {
